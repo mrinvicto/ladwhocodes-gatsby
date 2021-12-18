@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `LadWhoCodes`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Dinesh Verma`,
+      summary: `who lives in Mumbai and works at Sliceit.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://ladwhocodes.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `dineshverma`,
     },
   },
   plugins: [

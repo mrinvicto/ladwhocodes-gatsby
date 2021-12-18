@@ -1,9 +1,12 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import {
+  BLOG_AUTHOR_NAME,
+  BLOG_AUTHOR_SOCIAL_HANDLES,
+} from "../utils/constants"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -31,7 +34,10 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
         <footer>
-          <Bio />
+          <Bio
+            authorName={BLOG_AUTHOR_NAME}
+            authorSocialInfo={BLOG_AUTHOR_SOCIAL_HANDLES}
+          />
         </footer>
       </article>
       <nav className="blog-post-nav">
