@@ -12,7 +12,16 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://ladwhocodes.com",
+        sitemap: "https://ladwhocodes.com/sitemap/sitemap-index.xml",
+        policy: [{ userAgent: "*" }],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,12 +60,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-215676827-1`,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
