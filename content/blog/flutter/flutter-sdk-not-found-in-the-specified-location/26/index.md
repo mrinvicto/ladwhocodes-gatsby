@@ -1,7 +1,7 @@
 ---
 title: Fix - Flutter SDK not found in the specified location Error
 date: "2020-05-23T22:12:03.284Z"
-description: "Hello World"
+description: "Flutter is a mobile development SDK developed by Google. The best part of using Flutter is that you can create cross-platform applications which perform as good as native apps."
 ---
 
 Flutter is a mobile development SDK developed by Google. The best part of using Flutter is that you can create cross-platform applications which perform as good as native apps.
