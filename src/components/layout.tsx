@@ -1,7 +1,29 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { WindowLocation } from "@reach/router"
+import { useStaticQuery, graphql } from "gatsby"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, children }: ILayout) => {
+  const {
+    site: {
+      siteMetadata: { title },
+    },
+  } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            social {
+              twitter
+            }
+          }
+        }
+      }
+    `
+  )
+
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
@@ -31,6 +53,11 @@ const Layout = ({ location, title, children }) => {
       </footer>
     </div>
   )
+}
+
+interface ILayout {
+  location: WindowLocation
+  children?: React.ReactElement
 }
 
 export default Layout

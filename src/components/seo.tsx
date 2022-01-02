@@ -6,11 +6,11 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
+import * as PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, lang, meta, title }) => {
+const Seo = ({ description, lang, meta, title }: ISeoProps) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -36,7 +36,7 @@ const Seo = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : ""}
       meta={[
         {
           name: `description`,
@@ -73,6 +73,13 @@ const Seo = ({ description, lang, meta, title }) => {
       ].concat(meta)}
     />
   )
+}
+
+interface ISeoProps {
+  description: string
+  lang: string
+  meta: any
+  title: string
 }
 
 Seo.defaultProps = {
