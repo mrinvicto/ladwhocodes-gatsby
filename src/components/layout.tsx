@@ -1,29 +1,9 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { WindowLocation } from "@reach/router"
-import { useStaticQuery, graphql } from "gatsby"
+import { SITE_TITLE } from "../../constants"
 
 const Layout = ({ location, children }: ILayout) => {
-  const {
-    site: {
-      siteMetadata: { title },
-    },
-  } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            social {
-              twitter
-            }
-          }
-        }
-      }
-    `
-  )
-
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
@@ -31,13 +11,13 @@ const Layout = ({ location, children }: ILayout) => {
   if (isRootPath) {
     header = (
       <h1 className="main-heading">
-        <Link to="/">{title}</Link>
+        <Link to="/">{SITE_TITLE}</Link>
       </h1>
     )
   } else {
     header = (
       <Link className="header-link-home" to="/">
-        {title}
+        {SITE_TITLE}
       </Link>
     )
   }

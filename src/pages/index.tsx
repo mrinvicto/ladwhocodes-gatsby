@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { IPageProps } from "../models/IPageProps"
 import { BlogIndexQuery } from "../../graphql-types"
+import { SITE_HOME_TITLE } from "../../constants"
 
 const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
   const posts = data.allMarkdownRemark.nodes
@@ -13,7 +14,7 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
     return (
       <Layout location={location}>
         <>
-          <Seo title="All posts" />
+          <Seo title={SITE_HOME_TITLE} isHomePage={true} />
           <Bio />
           <p>
             No blog posts found. Add markdown posts to "content/blog" (or the
@@ -28,7 +29,7 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
   return (
     <Layout location={location}>
       <>
-        <Seo title="All posts" />
+        <Seo title={SITE_HOME_TITLE} isHomePage={true} />
         <Bio />
         <ol style={{ listStyle: `none` }}>
           {posts.map(post => {
@@ -72,11 +73,6 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query BlogIndex {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt

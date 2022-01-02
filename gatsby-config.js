@@ -1,17 +1,27 @@
+const {
+  SITE_URL,
+  SITE_TITLE,
+  AUTHOR_NAME,
+  AUTHOR_BRIEF_DESCRIPTION,
+  SITE_HOME_META_DESCRIPTION,
+  AUTHOR_TWITTER_HANDLE,
+} = require("./constants")
+
 module.exports = {
   siteMetadata: {
-    title: `LadWhoCodes`,
+    title: SITE_TITLE,
     author: {
-      name: `Dinesh Verma`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: AUTHOR_NAME,
+      summary: AUTHOR_BRIEF_DESCRIPTION,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: SITE_HOME_META_DESCRIPTION,
+    siteUrl: SITE_URL,
     social: {
-      twitter: `kylemathews`,
+      twitter: AUTHOR_TWITTER_HANDLE,
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-ts`,
     `gatsby-plugin-image`,
     {

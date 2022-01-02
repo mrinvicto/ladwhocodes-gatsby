@@ -8,39 +8,20 @@
 import * as React from "react"
 import * as PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { AUTHOR_TWITTER_HANDLE, SITE_TITLE } from "../../constants"
 
-const Seo = ({ description, lang, meta, title }: ISeoProps) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            social {
-              twitter
-            }
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
-
+const Seo = ({ description, lang, meta, title, isHomePage }: ISeoProps) => {
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : ""}
+      titleTemplate={isHomePage ? "" : `%s | ${SITE_TITLE}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:title`,
@@ -48,7 +29,7 @@ const Seo = ({ description, lang, meta, title }: ISeoProps) => {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:type`,
@@ -60,7 +41,7 @@ const Seo = ({ description, lang, meta, title }: ISeoProps) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
+          content: AUTHOR_TWITTER_HANDLE,
         },
         {
           name: `twitter:title`,
@@ -68,7 +49,7 @@ const Seo = ({ description, lang, meta, title }: ISeoProps) => {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
       ].concat(meta)}
     />
@@ -80,6 +61,7 @@ interface ISeoProps {
   lang: string
   meta: any
   title: string
+  isHomePage?: boolean
 }
 
 Seo.defaultProps = {

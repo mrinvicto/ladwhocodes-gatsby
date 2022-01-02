@@ -3414,35 +3414,15 @@ export type ImageSharpSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
-export type BioQueryVariables = Exact<{ [key: string]: never; }>;
+export type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BioQuery = { site?: { siteMetadata?: { author?: { name?: string | null | undefined, summary?: string | null | undefined } | null | undefined, social?: { twitter?: string | null | undefined } | null | undefined } | null | undefined } | null | undefined };
+export type BlogIndexQuery = { allMarkdownRemark: { nodes: Array<{ excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, description?: string | null | undefined } | null | undefined }> } };
 
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { site?: { siteMetadata?: { title?: string | null | undefined, description?: string | null | undefined, social?: { twitter?: string | null | undefined } | null | undefined } | null | undefined } | null | undefined };
-
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_2_Query = { site?: { siteMetadata?: { title?: string | null | undefined, description?: string | null | undefined, social?: { twitter?: string | null | undefined } | null | undefined } | null | undefined } | null | undefined };
-
-export type NotFoundQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type NotFoundQuery = { site?: { siteMetadata?: { title?: string | null | undefined } | null | undefined } | null | undefined };
-
-export type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type BlogIndexQuery = { site?: { siteMetadata?: { title?: string | null | undefined } | null | undefined } | null | undefined, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, description?: string | null | undefined } | null | undefined }> } };
-
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_3_Query = { site?: { buildTime?: any | null | undefined } | null | undefined };
+export type Unnamed_1_Query = { site?: { buildTime?: any | null | undefined } | null | undefined };
 
 export type BlogPostBySlugQueryVariables = Exact<{
   id: Scalars['String'];
@@ -3451,7 +3431,7 @@ export type BlogPostBySlugQueryVariables = Exact<{
 }>;
 
 
-export type BlogPostBySlugQuery = { site?: { siteMetadata?: { title?: string | null | undefined } | null | undefined } | null | undefined, markdownRemark?: { id: string, excerpt?: string | null | undefined, html?: string | null | undefined, frontmatter?: { title?: string | null | undefined, date?: any | null | undefined, description?: string | null | undefined } | null | undefined } | null | undefined, previous?: { fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined } | null | undefined } | null | undefined, next?: { fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined } | null | undefined } | null | undefined };
+export type BlogPostBySlugQuery = { markdownRemark?: { id: string, excerpt?: string | null | undefined, html?: string | null | undefined, frontmatter?: { title?: string | null | undefined, date?: any | null | undefined, description?: string | null | undefined } | null | undefined } | null | undefined, previous?: { fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined } | null | undefined } | null | undefined, next?: { fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { title?: string | null | undefined } | null | undefined } | null | undefined };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null | undefined, width: number, height: number, src: string, srcSet: string };
 

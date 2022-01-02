@@ -1,11 +1,10 @@
 import * as React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { NotFoundQuery } from "../../graphql-types"
+
 import { IPageProps } from "../models/IPageProps"
 
-const NotFoundPage = ({ location }: IPageProps<NotFoundQuery>) => {
+const NotFoundPage = ({ location }: IPageProps<any>) => {
   return (
     <Layout location={location}>
       <>
@@ -18,13 +17,3 @@ const NotFoundPage = ({ location }: IPageProps<NotFoundQuery>) => {
 }
 
 export default NotFoundPage
-
-export const pageQuery = graphql`
-  query NotFound {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

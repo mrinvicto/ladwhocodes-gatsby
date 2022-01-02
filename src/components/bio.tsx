@@ -6,30 +6,14 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import {
+  AUTHOR_BRIEF_DESCRIPTION,
+  AUTHOR_NAME,
+  AUTHOR_TWITTER_HANDLE,
+} from "../../constants"
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query Bio {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
-
-  // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
-
   return (
     <div className="bio">
       <StaticImage
@@ -42,15 +26,16 @@ const Bio = () => {
         quality={95}
         alt="Profile picture"
       />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
-      )}
+      (
+      <p>
+        Written by <strong>{AUTHOR_NAME}</strong>{" "}
+        {AUTHOR_BRIEF_DESCRIPTION || null}
+        {` `}
+        <a href={`https://twitter.com/${AUTHOR_TWITTER_HANDLE}`}>
+          You should follow me on Twitter
+        </a>
+      </p>
+      )
     </div>
   )
 }
