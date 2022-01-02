@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Bio from "../components/bio"
+// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { IPageProps } from "../models/IPageProps"
@@ -40,9 +40,10 @@ const BlogPostTemplate = ({
             itemProp="articleBody"
           />
           <hr />
-          <footer>
+          {/* TODO: Commented for now */}
+          {/* <footer>
             <Bio />
-          </footer>
+          </footer> */}
         </article>
         <nav className="blog-post-nav">
           <ul

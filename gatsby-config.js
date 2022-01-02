@@ -25,6 +25,16 @@ module.exports = {
     `gatsby-plugin-ts`,
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Nunito:wght@700`,
+          `Spectral:ital,wght@0,400;0,700;1,400;1,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

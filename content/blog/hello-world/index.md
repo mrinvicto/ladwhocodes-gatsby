@@ -1,23 +1,10 @@
 ---
 title: Hello World
 date: "2015-05-01T22:12:03.284Z"
-# description: "Some description"
 excerpt: "This is just an except"
 meta_title: "This is a meta title"
 meta_description: "This is the description you see in google pages"
 meta_keywords: "some,keywords,for you"
-# meta_og_title: ""
-# meta_og_description: ""
-# meta_og_url: ""
-# meta_og_site_name: ""
-# meta_og_image: ""
-# meta_twitter_card: ""
-# meta_twitter_creator: ""
-# meta_twitter_site: ""
-# meta_twitter_label1: ""
-# meta_twitter_data1: ""
-# meta_twitter_label2: ""
-# meta_twitter_data2: ""
 ---
 
 This is my first post on my new fake blog! How exciting!
