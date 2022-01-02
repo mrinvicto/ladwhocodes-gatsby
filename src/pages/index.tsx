@@ -5,7 +5,17 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { IPageProps } from "../models/IPageProps"
 import { BlogIndexQuery } from "../../graphql-types"
-import { SITE_HOME_TITLE } from "../../constants"
+import {
+  SITE_HOME_TITLE,
+  SITE_HOME_META_DESCRIPTION,
+  SITE_HOME_KEYWORDS,
+} from "../../constants"
+
+const homePageMetaTags = {
+  description: SITE_HOME_META_DESCRIPTION,
+  title: SITE_HOME_TITLE,
+  keywords: SITE_HOME_KEYWORDS,
+}
 
 const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
   const posts = data.allMarkdownRemark.nodes
@@ -14,7 +24,12 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
     return (
       <Layout location={location}>
         <>
-          <Seo title={SITE_HOME_TITLE} isHomePage={true} />
+          <Seo
+            title={SITE_HOME_TITLE}
+            location={location}
+            og={{ type: "website" }}
+            meta={homePageMetaTags}
+          />
           <Bio />
           <p>
             No blog posts found. Add markdown posts to "content/blog" (or the
@@ -29,7 +44,12 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
   return (
     <Layout location={location}>
       <>
-        <Seo title={SITE_HOME_TITLE} isHomePage={true} />
+        <Seo
+          title={SITE_HOME_TITLE}
+          location={location}
+          og={{ type: "website" }}
+          meta={homePageMetaTags}
+        />
         <Bio />
         <ol style={{ listStyle: `none` }}>
           {posts.map(post => {

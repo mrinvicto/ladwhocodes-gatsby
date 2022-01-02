@@ -18,7 +18,13 @@ const BlogPostTemplate = ({
       <>
         <Seo
           title={post?.frontmatter?.title || ""}
-          description={post?.frontmatter?.description || post?.excerpt || ""}
+          location={location}
+          meta={{
+            title: post?.frontmatter?.meta_title || "",
+            description: post?.frontmatter?.meta_description || "",
+            keywords: post?.frontmatter?.meta_keywords || "",
+          }}
+          og={{ type: "article" }}
         />
         <article
           className="blog-post"
@@ -85,6 +91,10 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        excerpt
+        meta_title
+        meta_description
+        meta_keywords
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
