@@ -3434,15 +3434,20 @@ export type ImageSharpSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
-export type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type BlogIndexQuery = { allMarkdownRemark: { nodes: Array<{ excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, description?: string | null | undefined } | null | undefined }> } };
-
 export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_1_Query = { site?: { buildTime?: any | null | undefined } | null | undefined };
+
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_2_Query = { site?: { buildTime?: any | null | undefined } | null | undefined };
+
+export type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type BlogIndexQuery = { allMarkdownRemark: { nodes: Array<{ excerpt?: string | null | undefined, fields?: { slug?: string | null | undefined } | null | undefined, frontmatter?: { date?: any | null | undefined, title?: string | null | undefined, description?: string | null | undefined } | null | undefined }> } };
 
 export type BlogPostBySlugQueryVariables = Exact<{
   id: Scalars['String'];
