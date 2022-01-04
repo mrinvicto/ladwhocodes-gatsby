@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { IPageProps } from "../models/IPageProps"
 import { BlogPostBySlugQuery } from "../../graphql-types"
+import { AUTHOR_NAME } from "../../constants"
 
 const BlogPostTemplate = ({
   data,
@@ -33,7 +34,12 @@ const BlogPostTemplate = ({
         >
           <header>
             <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
-            <p>{post?.frontmatter?.date}</p>
+            <div style={styles.postMeta}>
+              <span>Published on {post?.frontmatter?.date || ""}</span>{" "}
+              <span>
+                by <Link to={"/about"}>{AUTHOR_NAME}</Link>{" "}
+              </span>
+            </div>
           </header>
           <section
             dangerouslySetInnerHTML={{ __html: post?.html || "" }}
@@ -74,6 +80,15 @@ const BlogPostTemplate = ({
       </>
     </Layout>
   )
+}
+
+const styles = {
+  postMeta: {
+    fontSize: "16px",
+    marginBottom: "35px",
+    borderBottom: "1px solid #1a202c",
+    paddingBottom: "10px",
+  },
 }
 
 export default BlogPostTemplate

@@ -9,6 +9,7 @@ import {
   SITE_HOME_TITLE,
   SITE_HOME_META_DESCRIPTION,
   SITE_HOME_KEYWORDS,
+  AUTHOR_NAME,
 } from "../../constants"
 
 const homePageMetaTags = {
@@ -54,8 +55,9 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
             const title = post?.frontmatter?.title || post?.fields?.slug
 
             return (
-              <li key={post?.fields?.slug}>
+              <li className="articleContainer" key={post?.fields?.slug}>
                 <article
+                  style={styles.postArticle}
                   className="post-list-item"
                   itemScope
                   itemType="http://schema.org/Article"
@@ -66,17 +68,28 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
                         <span itemProp="headline">{title}</span>
                       </Link>
                     </h2>
-                    <small>{post?.frontmatter?.date || ""}</small>
+                    <div style={styles.postMeta}>
+                      <span>Published on {post?.frontmatter?.date || ""}</span>{" "}
+                      <span>
+                        by <Link to={"/about"}>{AUTHOR_NAME}</Link>{" "}
+                      </span>
+                    </div>
                   </header>
-                  <section>
+                  <section style={styles.postSection}>
                     <p
                       dangerouslySetInnerHTML={{
-                        __html:
-                          post?.frontmatter?.description || post.excerpt || "",
+                        __html: post?.frontmatter?.excerpt || "",
                       }}
                       itemProp="description"
                     />
                   </section>
+                  <Link
+                    style={styles.readMoreBtn}
+                    to={post?.fields?.slug || ""}
+                    itemProp="url"
+                  >
+                    Read More
+                  </Link>
                 </article>
               </li>
             )
@@ -85,6 +98,25 @@ const BlogIndex = ({ data, location }: IPageProps<BlogIndexQuery>) => {
       </>
     </Layout>
   )
+}
+
+const styles = {
+  readMoreBtn: {
+    background: "#f5f5f5",
+    padding: "15px 20px",
+  },
+  postSection: {
+    marginBottom: "35px",
+  },
+  postArticle: {
+    marginBottom: "32px",
+  },
+  postMeta: {
+    fontSize: "16px",
+    marginBottom: "35px",
+    borderBottom: "1px solid #1a202c",
+    paddingBottom: "10px",
+  },
 }
 
 export default BlogIndex
@@ -101,6 +133,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          excerpt
         }
       }
     }

@@ -29,7 +29,10 @@ const Seo = ({ lang, meta, title, og, twitterCard, location }: ISeoProps) => {
       title={title}
       titleTemplate={isRootPath ? "" : `%s | ${SITE_TITLE}`}
       meta={getCombinedMetaTags(
-        meta,
+        {
+          ...meta,
+          title: rootPath ? meta.title : `${meta.title} | ${SITE_TITLE}`,
+        },
         { ...og, url: location.pathname },
         twitterCard
       )}

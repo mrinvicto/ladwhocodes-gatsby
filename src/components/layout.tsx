@@ -10,29 +10,58 @@ const Layout = ({ location, children }: ILayout) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
+      <h1 style={styles.headline} className="main-heading">
         <Link to="/">{SITE_TITLE}</Link>
       </h1>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {SITE_TITLE}
-      </Link>
+      <h2 style={styles.headline} className="main-heading">
+        <Link to="/">{SITE_TITLE}</Link>
+      </h2>
     )
   }
 
+  const menuItems = (
+    <ol style={styles.menuList}>
+      <li style={styles.menuListItem}>
+        <Link to={"/about"}>About Us</Link>
+      </li>
+      <li style={styles.menuListItem}>
+        <Link to={"/contact"}>Contact</Link>
+      </li>
+    </ol>
+  )
+
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
+      <header className="global-header">
+        {header}
+        {menuItems}
+      </header>
+      <main className={isRootPath ? "" : "mainWrapper"}>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <a rel="nofollow" href="https://www.gatsbyjs.com">
+          Gatsby
+        </a>
       </footer>
     </div>
   )
+}
+
+const styles = {
+  headline: {
+    flex: 1,
+  },
+  menuList: {
+    listStyle: "none",
+    display: "flex",
+  },
+  menuListItem: {
+    marginLeft: "20px",
+  },
 }
 
 interface ILayout {

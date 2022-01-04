@@ -29,7 +29,7 @@ module.exports = {
       options: {
         fonts: [
           `Nunito:wght@700`,
-          `Spectral:ital,wght@0,400;0,700;1,400;1,700`, // you can also specify font weights and styles
+          `Spectral:ital,wght@0,400;0,700;1,400;1,700`,
         ],
         display: "swap",
       },
