@@ -1,25 +1,37 @@
+const {
+  SITE_URL,
+  SITE_TITLE,
+  AUTHOR_NAME,
+  AUTHOR_BRIEF_DESCRIPTION,
+  SITE_HOME_META_DESCRIPTION,
+  AUTHOR_TWITTER_HANDLE,
+} = require("./constants")
+
 module.exports = {
   siteMetadata: {
-    title: `LadWhoCodes`,
+    title: SITE_TITLE,
     author: {
-      name: `Dinesh Verma`,
-      summary: `who lives in Mumbai and works at Sliceit.`,
+      name: AUTHOR_NAME,
+      summary: AUTHOR_BRIEF_DESCRIPTION,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://ladwhocodes.com/`,
+    description: SITE_HOME_META_DESCRIPTION,
+    siteUrl: SITE_URL,
     social: {
-      twitter: `dineshverma`,
+      twitter: AUTHOR_TWITTER_HANDLE,
     },
   },
   plugins: [
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-ts`,
     `gatsby-plugin-image`,
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        host: "https://ladwhocodes.com",
-        sitemap: "https://ladwhocodes.com/sitemap/sitemap-index.xml",
-        policy: [{ userAgent: "*" }],
+        fonts: [
+          `Nunito:wght@700`,
+          `Spectral:ital,wght@0,400;0,700;1,400;1,700`,
+        ],
+        display: "swap",
       },
     },
     {
@@ -60,12 +72,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-215676827-1`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `ADD YOUR TRACKING ID HERE`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
