@@ -30,6 +30,7 @@ module.exports = {
         fonts: [
           `Nunito:wght@700`,
           `Spectral:ital,wght@0,400;0,700;1,400;1,700`,
+          `Overpass+Mono`,
         ],
         display: "swap",
       },

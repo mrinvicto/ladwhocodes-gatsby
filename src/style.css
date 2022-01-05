@@ -32,6 +32,7 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: "Spectral", "Georgia", Cambria, "Times New Roman", Times,
     serif;
+  --fontFamily-mono: "Overpass Mono", monospace;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
@@ -310,6 +311,7 @@ a:focus {
 
 .blog-post header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+  line-height: 50px;
 }
 
 .blog-post header p {
@@ -325,6 +327,11 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+pre,
+code {
+  font-family: var(--fontFamily-mono) !important;
+}
+
 .articleContainer {
   margin-bottom: 50px !important;
   background: #fff !important;
@@ -333,7 +340,7 @@ a:focus {
 
 .mainWrapper {
   background: #fff;
-  padding: 60px 100px 20px;
+  padding: 92px 100px 20px;
 }
 
 /* Media queries */
