@@ -1,9 +1,9 @@
 ---
-title: Hello World 2
+title: Hello World
 date: "2015-05-01T22:12:03.284Z"
 description: "Hello World"
-permalink: "/announcement/we-are-live/2"
-categories: ["java"]
+permalink: "/announcement/we-are-live/1"
+categories: ["java", "C_SHARP"]
 ---
 
 This is my first post on my new fake blog! How exciting!
