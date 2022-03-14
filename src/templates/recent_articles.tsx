@@ -1,28 +1,36 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { CATEGORY_DETAILS } from "../utils/constants"
+import {
+  BLOG_DESCRIPTION,
+  BLOG_KEYWORDS,
+  BLOG_LIST_PAGE_TITLE_PREFIX,
+} from "../utils/constants"
 
-const CategoryPageTemplate = ({ data, location, pageContext }) => {
-  const posts = data.allMarkdownRemark.nodes
-  const categoryDetails = CATEGORY_DETAILS[pageContext.category.toLowerCase()]
+const RecentArticleListTemplate = ({ data, location, pageContext }) => {
+  const posts = data.allMarkdownRemark.edges
+  const { currentPage, numberOfPages } = pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numberOfPages
+  const prevPage =
+    currentPage - 1 === 1 ? "/" : `/${(currentPage - 1).toString()}`
+  const nextPage = `/${(currentPage + 1).toString()}`
   return (
     <Layout location={location}>
       <Seo
         location={location}
-        title={categoryDetails.title}
-        description={categoryDetails.description}
+        title={`${BLOG_LIST_PAGE_TITLE_PREFIX} - Page ${currentPage}`}
+        description={BLOG_DESCRIPTION}
         meta={{
-          keywords: categoryDetails.keywords,
-          description: categoryDetails.description,
+          keywords: BLOG_KEYWORDS,
+          description: BLOG_DESCRIPTION,
         }}
       />
       <h1>{pageContext.category}</h1>
       <ol style={{ listStyle: `none` }}>
-        {posts?.map(post => {
+        {posts?.map(postEdge => {
+          const post = postEdge.node
           const title = post.frontmatter.title || post.frontmatter.permalink
 
           return (
@@ -53,32 +61,38 @@ const CategoryPageTemplate = ({ data, location, pageContext }) => {
           )
         })}
       </ol>
+
+      {!isFirst && (
+        <Link to={prevPage} rel="prev">
+          ← Previous Page
+        </Link>
+      )}
+      {!isLast && (
+        <Link to={nextPage} rel="next">
+          Next Page →
+        </Link>
+      )}
     </Layout>
   )
 }
 
-export default CategoryPageTemplate
+export default RecentArticleListTemplate
 
 export const pageQuery = graphql`
-  query CategoryPageByType($category: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
+  query blogPageQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { frontmatter: { categories: { eq: $category } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
     ) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          permalink
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            date(formatString: "DD MMMM, YYYY")
+            title
+            permalink
+          }
         }
       }
     }

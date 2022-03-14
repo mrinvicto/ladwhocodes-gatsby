@@ -1,7 +1,10 @@
 import { CatgeoryPageDetails } from "../models/CatgeoryPageDetails"
 
 export const BLOG_TITLE_SUFFIX = "LadWhoCodes"
+export const BLOG_DESCRIPTION = "LadWhoCodes in the best blog"
+export const BLOG_KEYWORDS = "LadWhoCodes, Dinesh Verma"
 export const HOMEPAGE_TITLE = "LadWhoCodes - Hello World"
+export const BLOG_LIST_PAGE_TITLE_PREFIX = "LadWhoCodes"
 
 export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {
   java: {

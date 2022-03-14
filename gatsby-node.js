@@ -1,6 +1,47 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const MAX_POSTS_PER_PAGE_HOME = 1
+
+const createHomePagination = (posts, createPage) => {
+  const numberOfPages = Math.ceil(posts.length / MAX_POSTS_PER_PAGE_HOME)
+
+  Array.from({ length: numberOfPages }).forEach((_, i) => {
+    createPage({
+      path: `/${i + 1}`,
+      component: path.resolve("./src/templates/recent_articles.tsx"),
+      context: {
+        limit: MAX_POSTS_PER_PAGE_HOME,
+        skip: i * MAX_POSTS_PER_PAGE_HOME,
+        numberOfPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+}
+
+const createCategoryPages = (posts, createPage) => {
+  const categoriesFound = []
+
+  posts.forEach(post => {
+    post?.frontmatter?.categories?.forEach(cat => {
+      if (categoriesFound.indexOf(cat) === -1) {
+        categoriesFound.push(cat)
+      }
+    })
+  })
+
+  categoriesFound.forEach(cat => {
+    createPage({
+      path: `category/${cat.toLowerCase()}`,
+      component: path.resolve(`./src/templates/category-page.tsx`),
+      context: {
+        category: cat,
+      },
+    })
+  })
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
@@ -60,25 +101,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
 
-    const categoriesFound = []
-
-    posts.forEach(post => {
-      post?.frontmatter?.categories?.forEach(cat => {
-        if (categoriesFound.indexOf(cat) === -1) {
-          categoriesFound.push(cat)
-        }
-      })
-    })
-
-    categoriesFound.forEach(cat => {
-      createPage({
-        path: `category/${cat.toLowerCase()}`,
-        component: path.resolve(`./src/templates/category-page.tsx`),
-        context: {
-          category: cat,
-        },
-      })
-    })
+    createCategoryPages(posts, createPage)
+    createHomePagination(posts, createPage)
   }
 }
 
