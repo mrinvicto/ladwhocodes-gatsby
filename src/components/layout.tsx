@@ -1,7 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { PageProps } from "../models/PageProps"
 
-const Layout = ({ location, children }) => {
+const Layout = ({ location, children }: PageProps<any>) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   const title = "Hello World"

@@ -5,9 +5,11 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { HOMEPAGE_TITLE } from "../utils/constants"
+import { PageProps } from "../models/PageProps"
+import { HomePageBlogPostsQuery } from "../../graphql-types"
 
-const BlogIndex = ({ data, location }) => {
-  const posts = data.allMarkdownRemark.nodes
+const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
+  const posts = data?.allMarkdownRemark?.nodes || []
 
   if (posts.length === 0) {
     return (
@@ -29,10 +31,10 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
-          const title = post.frontmatter.title || post.frontmatter.permalink
+          const title = post?.frontmatter?.title
 
           return (
-            <li key={post.frontmatter.permalink}>
+            <li key={post?.frontmatter?.permalink}>
               <article
                 className="post-list-item"
                 itemScope
@@ -40,16 +42,19 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.frontmatter.permalink} itemProp="url">
+                    <Link
+                      to={post?.frontmatter?.permalink || ""}
+                      itemProp="url"
+                    >
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{post?.frontmatter?.date}</small>
                 </header>
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
+                      __html: post?.frontmatter?.description || "",
                     }}
                     itemProp="description"
                   />
@@ -66,7 +71,7 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  query HomePageBlogPosts {
     site {
       siteMetadata {
         title

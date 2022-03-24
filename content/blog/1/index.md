@@ -1,9 +1,15 @@
 ---
 title: Hello World 2
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
-permalink: "/announcement/we-are-live/2"
+date: "2015-05-01T00:00:00.000Z"
 categories: ["java"]
+excerpt: "This will show up on category/archieve pages"
+permalink: "/announcement/we-are-live/2"
+# SEO
+meta_title: "Sup Bitch"
+meta_description: "This is a meta description"
+meta_keywords: "This, is, a, keyword"
+meta_robots: "noindex" # never use this one unless there is a specific requirement
+meta_image: "LINK_TO_PAGE_IMAGE"
 ---
 
 This is my first post on my new fake blog! How exciting!

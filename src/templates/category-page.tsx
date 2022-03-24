@@ -1,14 +1,18 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { CATEGORY_DETAILS } from "../utils/constants"
+import { PageProps } from "../models/PageProps"
+import { CategoryPageByTypeQuery } from "../../graphql-types"
 
-const CategoryPageTemplate = ({ data, location, pageContext }) => {
-  const posts = data.allMarkdownRemark.nodes
-  const categoryDetails = CATEGORY_DETAILS[pageContext.category.toLowerCase()]
+const CategoryPageTemplate = ({
+  data,
+  location,
+  pageContext,
+}: PageProps<CategoryPageByTypeQuery>) => {
+  const posts = data?.allMarkdownRemark.nodes || []
+  const categoryDetails = CATEGORY_DETAILS[pageContext?.category?.toLowerCase()]
   return (
     <Layout location={location}>
       <Seo
@@ -20,13 +24,13 @@ const CategoryPageTemplate = ({ data, location, pageContext }) => {
           description: categoryDetails.description,
         }}
       />
-      <h1>{pageContext.category}</h1>
+      <h1>{pageContext?.category}</h1>
       <ol style={{ listStyle: `none` }}>
         {posts?.map(post => {
-          const title = post.frontmatter.title || post.frontmatter.permalink
+          const title = post?.frontmatter?.title
 
           return (
-            <li key={post.frontmatter.permalink}>
+            <li key={post?.frontmatter?.permalink}>
               <article
                 className="post-list-item"
                 itemScope
@@ -34,16 +38,19 @@ const CategoryPageTemplate = ({ data, location, pageContext }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.frontmatter.permalink} itemProp="url">
+                    <Link
+                      to={post?.frontmatter?.permalink || ""}
+                      itemProp="url"
+                    >
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{post?.frontmatter?.date}</small>
                 </header>
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
+                      __html: post?.frontmatter?.description || "",
                     }}
                     itemProp="description"
                   />

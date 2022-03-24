@@ -1,35 +1,41 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
+import { BlogPostBySlugQuery } from "../../graphql-types"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { PageProps } from "../models/PageProps"
 
-const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const { previous, next } = data
+const BlogPostTemplate = ({
+  data,
+  location,
+}: PageProps<BlogPostBySlugQuery>) => {
+  const post = data?.markdownRemark
+  const { previous, next } = data || {}
 
   return (
     <Layout location={location}>
-      <Seo
-        location={location}
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <Seo location={location} title={post?.frontmatter?.title || ""} />
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <h1>{post?.frontmatter?.meta_image}</h1>
+          <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
+          <p>{post?.frontmatter?.date}</p>
         </header>
         <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{ __html: post?.html || "" }}
           itemProp="articleBody"
         />
         <hr />
+        <div>
+          {post?.frontmatter?.categories?.map(category => {
+            return <p>{category}</p>
+          })}
+        </div>
         <footer>
           <Bio />
         </footer>
@@ -46,15 +52,15 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.frontmatter.permalink} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={previous?.frontmatter?.permalink || ""} rel="prev">
+                ← {previous?.frontmatter?.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.frontmatter.permalink} rel="next">
-                {next.frontmatter.title} →
+              <Link to={next?.frontmatter?.permalink || ""} rel="next">
+                {next?.frontmatter?.title} →
               </Link>
             )}
           </li>
@@ -85,6 +91,12 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        categories
+        meta_title
+        meta_description
+        meta_keywords
+        meta_robots
+        meta_image
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
@@ -93,6 +105,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        permalink
       }
     }
     next: markdownRemark(id: { eq: $nextPostId }) {

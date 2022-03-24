@@ -7,10 +7,16 @@ import {
   BLOG_KEYWORDS,
   BLOG_LIST_PAGE_TITLE_PREFIX,
 } from "../utils/constants"
+import { PageProps } from "../models/PageProps"
+import { BlogPostsByPageNumberQuery } from "../../graphql-types"
 
-const RecentArticleListTemplate = ({ data, location, pageContext }) => {
-  const posts = data.allMarkdownRemark.edges
-  const { currentPage, numberOfPages } = pageContext
+const RecentArticleListTemplate = ({
+  data,
+  location,
+  pageContext,
+}: PageProps<BlogPostsByPageNumberQuery>) => {
+  const posts = data?.allMarkdownRemark.edges || []
+  const { currentPage, numberOfPages } = pageContext || {}
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
   const prevPage =
@@ -27,14 +33,14 @@ const RecentArticleListTemplate = ({ data, location, pageContext }) => {
           description: BLOG_DESCRIPTION,
         }}
       />
-      <h1>{pageContext.category}</h1>
+      <h1>{pageContext?.category}</h1>
       <ol style={{ listStyle: `none` }}>
         {posts?.map(postEdge => {
           const post = postEdge.node
-          const title = post.frontmatter.title || post.frontmatter.permalink
+          const title = post?.frontmatter?.title
 
           return (
-            <li key={post.frontmatter.permalink}>
+            <li key={post?.frontmatter?.permalink}>
               <article
                 className="post-list-item"
                 itemScope
@@ -42,16 +48,19 @@ const RecentArticleListTemplate = ({ data, location, pageContext }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.frontmatter.permalink} itemProp="url">
+                    <Link
+                      to={post?.frontmatter?.permalink || ""}
+                      itemProp="url"
+                    >
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>{post?.frontmatter?.date}</small>
                 </header>
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
+                      __html: post?.frontmatter?.description || "",
                     }}
                     itemProp="description"
                   />
@@ -79,7 +88,7 @@ const RecentArticleListTemplate = ({ data, location, pageContext }) => {
 export default RecentArticleListTemplate
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+  query BlogPostsByPageNumber($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
@@ -92,6 +101,7 @@ export const pageQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             title
             permalink
+            description
           }
         }
       }

@@ -5,6 +5,7 @@ export const BLOG_DESCRIPTION = "LadWhoCodes in the best blog"
 export const BLOG_KEYWORDS = "LadWhoCodes, Dinesh Verma"
 export const HOMEPAGE_TITLE = "LadWhoCodes - Hello World"
 export const BLOG_LIST_PAGE_TITLE_PREFIX = "LadWhoCodes"
+export const NOT_FOUND_PAGE_TITLE = "404 - Page Not Found"
 
 export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {
   java: {

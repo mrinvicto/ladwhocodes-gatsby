@@ -1,10 +1,10 @@
+import { WindowLocation } from "@reach/router"
+
 export interface PageSEOInfo {
   language?: string
   location: WindowLocation
   title: string
   meta: MetaDetails
-  // og: OGDetails
-  // twitterCard: TwitterCardDetails
 }
 
 export interface MetaDetails {
