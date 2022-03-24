@@ -1,11 +1,12 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { PageProps } from "../models/PageProps"
+import { BLOG_HOME_TITLE } from "../utils/constants"
 
 const Layout = ({ location, children }: PageProps<any>) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  const title = "Hello World"
+  const title = BLOG_HOME_TITLE
   let header
 
   if (isRootPath) {

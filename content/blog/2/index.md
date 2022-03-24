@@ -1,9 +1,9 @@
 ---
 title: Hello World
 date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+excerpt: "Hello World"
 permalink: "/announcement/we-are-live/1"
-categories: ["java", "C_SHARP"]
+categories: ["java", "c_sharp"]
 ---
 
 This is my first post on my new fake blog! How exciting!

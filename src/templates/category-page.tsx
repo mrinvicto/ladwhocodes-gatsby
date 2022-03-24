@@ -50,7 +50,7 @@ const CategoryPageTemplate = ({
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post?.frontmatter?.description || "",
+                      __html: post?.frontmatter?.excerpt || "",
                     }}
                     itemProp="description"
                   />
@@ -84,7 +84,7 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          description
+          excerpt
           permalink
         }
       }

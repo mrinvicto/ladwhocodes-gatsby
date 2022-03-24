@@ -1,7 +1,5 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { HOMEPAGE_TITLE } from "../utils/constants"
@@ -15,12 +13,7 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
     return (
       <Layout location={location}>
         <Seo location={location} title={HOMEPAGE_TITLE} />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        <p>No blog posts found.</p>
       </Layout>
     )
   }
@@ -28,7 +21,6 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
   return (
     <Layout location={location}>
       <Seo location={location} title={HOMEPAGE_TITLE} />
-      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post?.frontmatter?.title
@@ -54,7 +46,7 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post?.frontmatter?.description || "",
+                      __html: post?.frontmatter?.excerpt || "",
                     }}
                     itemProp="description"
                   />
@@ -86,7 +78,7 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          description
+          excerpt
           permalink
         }
       }

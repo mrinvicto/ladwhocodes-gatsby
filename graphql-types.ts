@@ -247,6 +247,8 @@ export type DirectoryCtimeArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   jsxRuntime?: Maybe<Scalars['String']>;
@@ -832,6 +834,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -2045,6 +2049,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___author___summary'
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___social___twitter'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'jsxRuntime'
@@ -2180,6 +2186,8 @@ export type SiteGroupConnectionGroupArgs = {
 export type SiteFilterInput = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -3450,11 +3458,6 @@ export type ImageSharpSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
-export type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type BioQueryQuery = { site?: { siteMetadata?: { author?: { name?: string | null, summary?: string | null } | null, social?: { twitter?: string | null } | null } | null } | null };
-
 export type NotFoundPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3463,12 +3466,7 @@ export type NotFoundPageQuery = { site?: { siteMetadata?: { title?: string | nul
 export type HomePageBlogPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type HomePageBlogPostsQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, description?: string | null, permalink?: string | null } | null }> } };
-
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_1_Query = { site?: { buildTime?: any | null } | null };
+export type HomePageBlogPostsQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null } | null }> } };
 
 export type BlogPostBySlugQueryVariables = Exact<{
   id: Scalars['String'];
@@ -3484,7 +3482,7 @@ export type CategoryPageByTypeQueryVariables = Exact<{
 }>;
 
 
-export type CategoryPageByTypeQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, description?: string | null, permalink?: string | null } | null }> } };
+export type CategoryPageByTypeQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null } | null }> } };
 
 export type BlogPostsByPageNumberQueryVariables = Exact<{
   skip: Scalars['Int'];
@@ -3492,7 +3490,7 @@ export type BlogPostsByPageNumberQueryVariables = Exact<{
 }>;
 
 
-export type BlogPostsByPageNumberQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null, frontmatter?: { date?: any | null, title?: string | null, permalink?: string | null, description?: string | null } | null } }> } };
+export type BlogPostsByPageNumberQuery = { allMarkdownRemark: { edges: Array<{ node: { excerpt?: string | null, frontmatter?: { date?: any | null, title?: string | null, permalink?: string | null, excerpt?: string | null } | null } }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 

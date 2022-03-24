@@ -60,7 +60,7 @@ const RecentArticleListTemplate = ({
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post?.frontmatter?.description || "",
+                      __html: post?.frontmatter?.excerpt || "",
                     }}
                     itemProp="description"
                   />
@@ -101,7 +101,7 @@ export const pageQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             title
             permalink
-            description
+            excerpt
           }
         }
       }

@@ -1,4 +1,5 @@
 import { CatgeoryPageDetails } from "../models/CatgeoryPageDetails"
+export const BLOG_HOME_TITLE = "LadWhoCodes"
 export const BLOG_TITLE_SUFFIX = "LadWhoCodes"
 export const BLOG_DESCRIPTION = "LadWhoCodes in the best blog"
 export const BLOG_KEYWORDS = "LadWhoCodes, Dinesh Verma"

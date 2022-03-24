@@ -9,3 +9,7 @@ export const getCombinedMetaDetails = (meta: MetaDetails): MetaEntry[] => {
     }
   })
 }
+
+export const getCategoryPageRoute = (category: string) => {
+  return `/category/${category}`
+}

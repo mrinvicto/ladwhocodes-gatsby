@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { BlogPostBySlugQuery } from "../../graphql-types"
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { PageProps } from "../models/PageProps"
+import { getCategoryPageRoute } from "../utils/helpers"
 
 const BlogPostTemplate = ({
   data,
@@ -33,12 +33,11 @@ const BlogPostTemplate = ({
         <hr />
         <div>
           {post?.frontmatter?.categories?.map(category => {
-            return <p>{category}</p>
+            return (
+              <Link to={getCategoryPageRoute(category || "")}>{category}</Link>
+            )
           })}
         </div>
-        <footer>
-          <Bio />
-        </footer>
       </article>
       <nav className="blog-post-nav">
         <ul

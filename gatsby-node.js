@@ -1,7 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const MAX_POSTS_PER_PAGE_HOME = 1
+const MAX_POSTS_PER_PAGE_HOME = 10
 
 const createHomePagination = (posts, createPage) => {
   const numberOfPages = Math.ceil(posts.length / MAX_POSTS_PER_PAGE_HOME)
