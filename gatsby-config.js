@@ -1,3 +1,4 @@
+const SITE_URL = "https://ladwhocodes.com/"
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -6,7 +7,7 @@ module.exports = {
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: SITE_URL,
     social: {
       twitter: `kylemathews`,
     },
@@ -138,5 +139,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 }
