@@ -22,7 +22,6 @@ const BlogPostTemplate = ({
           title: post?.frontmatter?.meta_title || "",
           description: post?.frontmatter?.meta_description || "",
           keywords: post?.frontmatter?.meta_keywords || "",
-          robots: post?.frontmatter?.meta_robots || "",
           image: post?.frontmatter?.meta_image || "",
           type: "article",
         }}
@@ -33,7 +32,6 @@ const BlogPostTemplate = ({
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1>{post?.frontmatter?.meta_image}</h1>
           <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
           <p>{post?.frontmatter?.date}</p>
         </header>
@@ -105,7 +103,6 @@ export const pageQuery = graphql`
         meta_title
         meta_description
         meta_keywords
-        meta_robots
         meta_image
       }
     }
