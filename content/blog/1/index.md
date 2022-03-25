@@ -8,7 +8,6 @@ permalink: "/announcement/we-are-live/2"
 meta_title: "Sup Bitch"
 meta_description: "This is a meta description"
 meta_keywords: "This, is, a, keyword"
-meta_robots: "noindex" # never use this one unless there is a specific requirement
 meta_image: "LINK_TO_PAGE_IMAGE"
 ---
 
