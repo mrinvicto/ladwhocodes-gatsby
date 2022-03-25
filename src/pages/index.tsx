@@ -2,25 +2,23 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { HOMEPAGE_TITLE } from "../utils/constants"
+import {
+  BLOG_DESCRIPTION,
+  BLOG_KEYWORDS,
+  HOMEPAGE_TITLE,
+} from "../utils/constants"
 import { PageProps } from "../models/PageProps"
 import { HomePageBlogPostsQuery } from "../../graphql-types"
 
 const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
   const posts = data?.allMarkdownRemark?.nodes || []
 
-  if (posts.length === 0) {
-    return (
-      <Layout location={location}>
-        <Seo location={location} title={HOMEPAGE_TITLE} />
-        <p>No blog posts found.</p>
-      </Layout>
-    )
+  const getNoPostsSection = () => {
+    return <p>No blog posts found.</p>
   }
 
-  return (
-    <Layout location={location}>
-      <Seo location={location} title={HOMEPAGE_TITLE} />
+  const getPostsListSection = () => {
+    return (
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post?.frontmatter?.title
@@ -56,6 +54,30 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
           )
         })}
       </ol>
+    )
+  }
+
+  const getPostsSection = () => {
+    if (posts.length === 0) {
+      return getNoPostsSection()
+    } else {
+      return getPostsListSection()
+    }
+  }
+
+  return (
+    <Layout location={location}>
+      <Seo
+        location={location}
+        title={HOMEPAGE_TITLE}
+        meta={{
+          description: BLOG_DESCRIPTION,
+          title: HOMEPAGE_TITLE,
+          type: "website",
+          keywords: BLOG_KEYWORDS,
+        }}
+      />
+      {getPostsSection()}
     </Layout>
   )
 }

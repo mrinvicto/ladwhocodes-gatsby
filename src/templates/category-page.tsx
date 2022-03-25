@@ -18,10 +18,11 @@ const CategoryPageTemplate = ({
       <Seo
         location={location}
         title={categoryDetails.title}
-        description={categoryDetails.description}
         meta={{
           keywords: categoryDetails.keywords,
           description: categoryDetails.description,
+          title: categoryDetails.title,
+          type: "website",
         }}
       />
       <h1>{pageContext?.category}</h1>

@@ -8,10 +8,13 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-// import { useStaticQuery, graphql } from "gatsby"
 import { PageSEOInfo } from "../models/PageSEOInfo"
 import { BLOG_TITLE_SUFFIX } from "../utils/constants"
-import { getCombinedMetaDetails } from "../utils/helpers"
+import {
+  getCombinedMetaDetails,
+  getCompletePageURL,
+  getMetaLinks,
+} from "../utils/helpers"
 
 const Seo = (props: PageSEOInfo) => {
   const { location, title, meta, language = "en" } = props
@@ -24,7 +27,11 @@ const Seo = (props: PageSEOInfo) => {
         lang: language,
       }}
       title={fomattedTitle}
-      meta={getCombinedMetaDetails(meta)}
+      meta={getCombinedMetaDetails(
+        meta,
+        getCompletePageURL(location?.pathname || "")
+      )}
+      link={getMetaLinks(getCompletePageURL(location?.pathname || ""))}
     />
   )
 }

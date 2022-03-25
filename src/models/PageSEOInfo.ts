@@ -9,17 +9,10 @@ export interface PageSEOInfo {
 
 export interface MetaDetails {
   description: string
-  title?: string
+  title: string
   keywords: string
   robots?: string
-}
-
-export interface OGDetails {
-  title?: string
-  description?: string
-  url: string
-  siteName: string
-  image: string
+  image?: string
   type: string
 }
 
@@ -32,4 +25,9 @@ export interface MetaEntry {
   name?: string
   property?: string
   content: string
+}
+
+export interface LinkProps {
+  rel: string
+  href: string
 }

@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import {
   BLOG_DESCRIPTION,
+  HOMEPAGE_TITLE,
   BLOG_KEYWORDS,
   BLOG_LIST_PAGE_TITLE_PREFIX,
 } from "../utils/constants"
@@ -27,10 +28,11 @@ const RecentArticleListTemplate = ({
       <Seo
         location={location}
         title={`${BLOG_LIST_PAGE_TITLE_PREFIX} - Page ${currentPage}`}
-        description={BLOG_DESCRIPTION}
         meta={{
           keywords: BLOG_KEYWORDS,
           description: BLOG_DESCRIPTION,
+          title: `${HOMEPAGE_TITLE} - Page ${currentPage + 1}`,
+          type: "website",
         }}
       />
       <h1>{pageContext?.category}</h1>

@@ -15,7 +15,18 @@ const BlogPostTemplate = ({
 
   return (
     <Layout location={location}>
-      <Seo location={location} title={post?.frontmatter?.title || ""} />
+      <Seo
+        location={location}
+        title={post?.frontmatter?.meta_title || post?.frontmatter?.title || ""}
+        meta={{
+          title: post?.frontmatter?.meta_title || "",
+          description: post?.frontmatter?.meta_description || "",
+          keywords: post?.frontmatter?.meta_keywords || "",
+          robots: post?.frontmatter?.meta_robots || "",
+          image: post?.frontmatter?.meta_image || "",
+          type: "article",
+        }}
+      />
       <article
         className="blog-post"
         itemScope
