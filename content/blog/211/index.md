@@ -1,10 +1,14 @@
 ---
 title: Images not loading in React Native on iOS 14 devices & Xcode 12
 date: "2021-03-25T22:12:03.284Z"
-excerpt: "Recently while releasing an update for our iOS app we encountered a weird issue in which images rendered using < Image > component were not getting rendered at all on iOS devices. This was a shocker to us, as no major change was made in our app, then why this issue?"
+categories: ["react-native"]
+excerpt: Recently while releasing an update for our iOS app we encountered a weird issue in which images rendered using < Image > component were not getting rendered at all on iOS devices. This was a shocker to us, as no major change was made in our app, then why this issue?
+permalink: "/react-native/images-not-loading-in-react-native-on-ios-14-devices-xcode-12/211/"
+# SEO
 meta_title: Fix Images not loading in React Native on iOS 14 devices & Xcode 12
-meta_description: "If images have stopped working in your react native project after upgrading to iOS 14 on xCode 12, then this solution might just work for you."
+meta_description: If images have stopped working in your react native project after upgrading to iOS 14 on xCode 12, then this solution might just work for you.
 meta_keywords: "How to fix image not loading iOS react native, Image not loading iOS 14 and React Native"
+meta_image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGTF0i8xqGLcp1q0ozq0BpxPrU2mKtJDk2t9c_iLDcoguEDZyS6dhkyj38gLpQZ4oKhu3A1LgD8ObxAGV2pWAXLQD32C2nNHCIEIValbktf3W_gWIffiug9WX8vIHGGlAvg_AALTg52-3j3--YYkit5L7XWW1sXQDVaeYjc4zkgP08A3Zijk42tDz-9Q/s1600/og-211.png
 ---
 
 Recently while releasing an update for our iOS app we encountered a weird issue in which images rendered using < Image > component were not getting rendered at all on iOS devices. This was a shocker to us, as no major change was made in our app, then why this issue?

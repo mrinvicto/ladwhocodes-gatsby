@@ -1,33 +1,24 @@
-// If you don't want to use TypeScript you can delete this file!
 import * as React from "react"
-import { PageProps, graphql } from "gatsby"
-
+import { graphql } from "gatsby"
+import { AboutMePageQuery } from "../../graphql-types"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { PageProps } from "../models/PageProps"
 
-type DataProps = {
-  site: {
-    buildTime: string
-  }
-}
-
-const AboutUsPage: React.FC<PageProps<DataProps>> = ({
-  data,
-  path,
-  location,
-}) => (
-  // TODO: Monika
+const AboutUsPage = ({ location }: PageProps<AboutMePageQuery>) => (
   <Layout location={location}>
     <>
       <Seo
-        title="About"
+        title="Dinesh Verma - The lad behind LadWhoCodes"
         location={location}
-        og={{ type: "website" }}
+        shouldAppendTitle={false}
         meta={{
-          title: "About",
-          description: "Dinesh Verma is the lad behind LadWhoCodes.",
+          type: "website",
+          title: "Dinesh Verma - The lad behind LadWhoCodes",
+          description:
+            "Dinesh Verma is the lad behind LadWhoCodes. He is currently working as SDE 3 at Slice and has previously worked in top tier companies like Dream11, ZS Associates and TCS.",
           keywords:
-            "Dinesh Verma, LadWhoCodes, About Dinesh Verma, Dinesh Verma Dream11, Dinesh Verma Sliceit, Dinesh Verma Github",
+            "Dinesh Verma, LadWhoCodes, About Dinesh Verma, Dinesh Verma Dream11, Dinesh Verma Sliceit, Dinesh Verma Github, Dinesh Verma ZS Associates",
         }}
       />
       <h1>Dinesh Verma - The LadWhoCodes</h1>
@@ -63,7 +54,7 @@ const AboutUsPage: React.FC<PageProps<DataProps>> = ({
 export default AboutUsPage
 
 export const query = graphql`
-  {
+  query AboutMePage {
     site {
       buildTime(formatString: "YYYY-MM-DD hh:mm a z")
     }

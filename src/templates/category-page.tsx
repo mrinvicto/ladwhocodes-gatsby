@@ -2,25 +2,32 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import {
-  BLOG_DESCRIPTION,
-  BLOG_KEYWORDS,
-  HOMEPAGE_TITLE,
-} from "../utils/constants"
+import { CATEGORY_DETAILS } from "../utils/constants"
 import { PageProps } from "../models/PageProps"
-import { HomePageBlogPostsQuery } from "../../graphql-types"
+import { CategoryPageByTypeQuery } from "../../graphql-types"
 
-const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
-  const posts = data?.allMarkdownRemark?.nodes || []
-
-  const getNoPostsSection = () => {
-    return <p>No blog posts found.</p>
-  }
-
-  const getPostsListSection = () => {
-    return (
+const CategoryPageTemplate = ({
+  data,
+  location,
+  pageContext,
+}: PageProps<CategoryPageByTypeQuery>) => {
+  const posts = data?.allMarkdownRemark.nodes || []
+  const categoryDetails = CATEGORY_DETAILS[pageContext?.category?.toLowerCase()]
+  return (
+    <Layout location={location}>
+      <Seo
+        shouldAppendTitle={true}
+        location={location}
+        title={categoryDetails.title}
+        meta={{
+          keywords: categoryDetails.keywords,
+          description: categoryDetails.description,
+          type: "website",
+        }}
+      />
+      <h1>{categoryDetails.title}</h1>
       <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
+        {posts?.map(post => {
           const title = post?.frontmatter?.title
 
           return (
@@ -54,44 +61,22 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
           )
         })}
       </ol>
-    )
-  }
-
-  const getPostsSection = () => {
-    if (posts.length === 0) {
-      return getNoPostsSection()
-    } else {
-      return getPostsListSection()
-    }
-  }
-
-  return (
-    <Layout location={location}>
-      <Seo
-        location={location}
-        title={HOMEPAGE_TITLE}
-        meta={{
-          description: BLOG_DESCRIPTION,
-          title: HOMEPAGE_TITLE,
-          type: "website",
-          keywords: BLOG_KEYWORDS,
-        }}
-      />
-      {getPostsSection()}
     </Layout>
   )
 }
 
-export default BlogIndex
+export default CategoryPageTemplate
 
 export const pageQuery = graphql`
-  query HomePageBlogPosts {
+  query CategoryPageByType($category: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { categories: { eq: $category } } }
+    ) {
       nodes {
         excerpt
         fields {

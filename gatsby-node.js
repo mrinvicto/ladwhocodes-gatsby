@@ -1,6 +1,47 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const MAX_POSTS_PER_PAGE_HOME = 10
+
+const createHomePagination = (posts, createPage) => {
+  const numberOfPages = Math.ceil(posts.length / MAX_POSTS_PER_PAGE_HOME)
+
+  Array.from({ length: numberOfPages }).forEach((_, i) => {
+    createPage({
+      path: `/${i + 1}`,
+      component: path.resolve("./src/templates/recent_articles.tsx"),
+      context: {
+        limit: MAX_POSTS_PER_PAGE_HOME,
+        skip: i * MAX_POSTS_PER_PAGE_HOME,
+        numberOfPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+}
+
+const createCategoryPages = (posts, createPage) => {
+  const categoriesFound = []
+
+  posts.forEach(post => {
+    post?.frontmatter?.categories?.forEach(cat => {
+      if (categoriesFound.indexOf(cat) === -1) {
+        categoriesFound.push(cat)
+      }
+    })
+  })
+
+  categoriesFound.forEach(cat => {
+    createPage({
+      path: `category/${cat.toLowerCase()}`,
+      component: path.resolve(`./src/templates/category-page.tsx`),
+      context: {
+        category: cat,
+      },
+    })
+  })
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
@@ -19,6 +60,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+            }
+            frontmatter {
+              permalink
+              categories
             }
           }
         }
@@ -46,7 +91,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
       createPage({
-        path: post.fields.slug,
+        path: post.frontmatter.permalink,
         component: blogPost,
         context: {
           id: post.id,
@@ -55,11 +100,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       })
     })
+
+    createCategoryPages(posts, createPage)
+    createHomePagination(posts, createPage)
   }
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
+
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
 
