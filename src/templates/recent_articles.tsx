@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import {
   BLOG_DESCRIPTION,
-  HOMEPAGE_TITLE,
   BLOG_KEYWORDS,
   BLOG_LIST_PAGE_TITLE_PREFIX,
 } from "../utils/constants"

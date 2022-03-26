@@ -32,7 +32,7 @@ const getOGMetaHelmetTags = (
     },
     {
       property: `og:image:alt`,
-      content: meta.title,
+      content: meta.title || "",
     },
     {
       property: `og:image`,
@@ -73,7 +73,7 @@ const getTwitterCardMetaHelmetTags = (meta: MetaDetails): MetaEntry[] => {
     },
     {
       name: `twitter:title`,
-      content: meta.title,
+      content: meta.title || "",
     },
     {
       name: `twitter:description`,
@@ -89,7 +89,7 @@ const getTwitterCardMetaHelmetTags = (meta: MetaDetails): MetaEntry[] => {
     },
     {
       name: `twitter:image:alt`,
-      content: meta.title,
+      content: meta.title || "",
     },
   ]
 }
