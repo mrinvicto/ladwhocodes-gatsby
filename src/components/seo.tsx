@@ -17,10 +17,16 @@ import {
 } from "../utils/helpers"
 
 const Seo = (props: PageSEOInfo) => {
-  const { location, title, meta, language = "en" } = props
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location?.pathname === rootPath
-  const fomattedTitle = isRootPath ? title : `${title} | ${BLOG_TITLE_SUFFIX}`
+  const {
+    location,
+    title,
+    meta,
+    language = "en",
+    shouldAppendTitle = false,
+  } = props
+  const fomattedTitle = !shouldAppendTitle
+    ? title
+    : `${title} | ${BLOG_TITLE_SUFFIX}`
   return (
     <Helmet
       htmlAttributes={{
@@ -28,7 +34,7 @@ const Seo = (props: PageSEOInfo) => {
       }}
       title={fomattedTitle}
       meta={getCombinedMetaDetails(
-        meta,
+        { ...meta, title: meta.title || fomattedTitle },
         getCompletePageURL(location?.pathname || "")
       )}
       link={getMetaLinks(getCompletePageURL(location?.pathname || ""))}

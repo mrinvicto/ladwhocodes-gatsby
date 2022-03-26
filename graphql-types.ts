@@ -3458,6 +3458,11 @@ export type NotFoundPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type NotFoundPageQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null };
 
+export type AboutMePageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AboutMePageQuery = { site?: { buildTime?: any | null } | null };
+
 export type HomePageBlogPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 

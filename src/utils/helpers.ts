@@ -28,7 +28,7 @@ const getOGMetaHelmetTags = (
   return [
     {
       property: `og:title`,
-      content: meta.title,
+      content: meta.title || "",
     },
     {
       property: `og:image:alt`,

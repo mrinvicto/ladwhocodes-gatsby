@@ -5,11 +5,12 @@ export interface PageSEOInfo {
   location: WindowLocation
   title: string
   meta: MetaDetails
+  shouldAppendTitle?: boolean
 }
 
 export interface MetaDetails {
   description: string
-  title: string
+  title?: string
   keywords: string
   robots?: string
   image?: string

@@ -16,16 +16,16 @@ const CategoryPageTemplate = ({
   return (
     <Layout location={location}>
       <Seo
+        shouldAppendTitle={true}
         location={location}
         title={categoryDetails.title}
         meta={{
           keywords: categoryDetails.keywords,
           description: categoryDetails.description,
-          title: categoryDetails.title,
           type: "website",
         }}
       />
-      <h1>{pageContext?.category}</h1>
+      <h1>{categoryDetails.title}</h1>
       <ol style={{ listStyle: `none` }}>
         {posts?.map(post => {
           const title = post?.frontmatter?.title

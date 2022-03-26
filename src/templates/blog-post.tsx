@@ -18,6 +18,7 @@ const BlogPostTemplate = ({
       <Seo
         location={location}
         title={post?.frontmatter?.meta_title || post?.frontmatter?.title || ""}
+        shouldAppendTitle={true}
         meta={{
           title: post?.frontmatter?.meta_title || "",
           description: post?.frontmatter?.meta_description || "",

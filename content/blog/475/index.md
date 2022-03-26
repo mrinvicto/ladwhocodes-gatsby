@@ -3,12 +3,12 @@ title: How to auto format your Java codebase before commit
 date: "2022-01-06T22:12:03.284Z"
 categories: ["java"]
 excerpt: When you are working with a big team where everyone has their own code formatting preferences, it becomes very difficult to have consistent formatting across your codebase. This is very common with Java projects as there are tons of options for IDEs too. So, let's get our hands dirty and try to implement provision for auto code format for Java using prettier and git hooks.
-permalink: "/announcement/we-are-live/2"
+permalink: "/java/prettier-integration-with-java/475/"
 # SEO
-meta_title: How to use prettier to format your Java codebase?
+meta_title: How to use prettier to format your Java codebase
 meta_description: Prettier is a code formatter that can be used to format your code. Learn to integrate it to your Java codebase via hooks and format your code everytime before pushing it to github.
 meta_keywords: "Java code prettier, prettier for java projects, auto format java code before commit"
-meta_image: "LINK_TO_PAGE_IMAGE" # TODO
+meta_image: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgl4_lXeaQ4dRNKTTP2L6wfOchvwXjuLWX-p6rc3uHeGA1ypbtv_VZ3yiY-g1d7TF27qBAIOjoPM5LZPgY83IkGXjuGS_2-gInV_K3qY7MF1PVhsv2captY_tDv8CU9AFZCeUz_ow5hA-ZDYQ9v8jVL0Glxl0ToJPucOMpaD9I_EGzaldjZ2GMx1wRDHA/s1600/og-475.png
 ---
 
 When you are working with a big team where everyone has their own code formatting preferences, it becomes very difficult to have consistent formatting across your codebase. This is very common with Java projects as there are tons of options for IDEs too and each one has its own formatting engine.

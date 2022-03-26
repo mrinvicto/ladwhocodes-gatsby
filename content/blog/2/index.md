@@ -3,7 +3,7 @@ title: Hello World
 date: "2015-05-01T22:12:03.284Z"
 excerpt: "Hello World"
 permalink: "/announcement/we-are-live/1"
-categories: ["java", "c_sharp"]
+categories: ["java"]
 ---
 
 This is my first post on my new fake blog! How exciting!

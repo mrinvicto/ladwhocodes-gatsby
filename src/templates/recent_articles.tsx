@@ -31,9 +31,9 @@ const RecentArticleListTemplate = ({
         meta={{
           keywords: BLOG_KEYWORDS,
           description: BLOG_DESCRIPTION,
-          title: `${HOMEPAGE_TITLE} - Page ${currentPage + 1}`,
           type: "website",
         }}
+        shouldAppendTitle={true}
       />
       <h1>{pageContext?.category}</h1>
       <ol style={{ listStyle: `none` }}>
