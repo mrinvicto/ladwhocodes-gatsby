@@ -4,8 +4,7 @@ import { BlogPostBySlugQuery } from "../../graphql-types"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { PageProps } from "../models/PageProps"
-import { getCategoryPageRoute, getCompletePageURL } from "../utils/helpers"
-import { Disqus } from "gatsby-plugin-disqus"
+import { getCategoryPageRoute } from "../utils/helpers"
 
 const BlogPostTemplate = ({
   data,
@@ -13,7 +12,6 @@ const BlogPostTemplate = ({
 }: PageProps<BlogPostBySlugQuery>) => {
   const post = data?.markdownRemark
   const { previous, next } = data || {}
-  const canonicalURL = getCompletePageURL(location?.pathname || "")
 
   return (
     <Layout location={location}>
@@ -77,16 +75,6 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
-      <Disqus
-        config={{
-          /* Replace PAGE_URL with your post's canonical URL variable */
-          url: canonicalURL,
-          /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
-          identifier: post?.id,
-          /* Replace PAGE_TITLE with the title of the page */
-          title: post?.frontmatter?.title,
-        }}
-      />
     </Layout>
   )
 }

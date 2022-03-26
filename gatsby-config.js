@@ -13,12 +13,6 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `ladwhocodes`,
-      },
-    },
     `gatsby-plugin-graphql-codegen`,
     {
       resolve: `gatsby-plugin-typescript`,
