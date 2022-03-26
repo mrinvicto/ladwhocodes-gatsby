@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+
+sitemap: https://ladwhocodes.com/sitemap/sitemap-index.xml
