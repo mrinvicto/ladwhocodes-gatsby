@@ -3463,6 +3463,11 @@ export type AboutMePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type AboutMePageQuery = { site?: { buildTime?: any | null } | null };
 
+export type ContactUsPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ContactUsPageQuery = { site?: { buildTime?: any | null } | null };
+
 export type HomePageBlogPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
