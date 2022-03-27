@@ -4,9 +4,11 @@ import { CatgeoryPageDetails } from "../models/CatgeoryPageDetails"
 export const SITE_URL = "https://ladwhocodes.com"
 export const BLOG_HOME_TITLE = "LadWhoCodes"
 export const BLOG_TITLE_SUFFIX = "LadWhoCodes"
-export const BLOG_DESCRIPTION = "LadWhoCodes in the best blog"
-export const BLOG_KEYWORDS = "LadWhoCodes, Dinesh Verma"
-export const HOMEPAGE_TITLE = "LadWhoCodes - Hello World"
+export const BLOG_DESCRIPTION =
+  "LadWhoCodes is Dinesh Verma's personal blog where we writes about better coding practices, how-to guides, tutorials on latest technologies, and much more."
+export const BLOG_KEYWORDS =
+  "LadWhoCodes, Dinesh Verma, Dinesh Verma Slice, Dinesh Verma Dream11, Dinesh Verma ZS Associates, Dinesh Verma from LadWhoCodes"
+export const HOMEPAGE_TITLE = "LadWhoCodes - A blog about coding and debugging"
 export const BLOG_LIST_PAGE_TITLE_PREFIX = "LadWhoCodes"
 
 // 404 Error page
