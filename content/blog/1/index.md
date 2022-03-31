@@ -224,6 +224,6 @@ export const pageQuery = graphql`
 `
 ```
 
-**Step 6:** Everything is done now, all you have to do now is restart your application and open the url http://localhost:8000/category/category_name_1. Everything should work just fine.
+**Step 6:** Everything is done now, all you have to do now is restart your application and open the url `http://localhost:8000/category/category_name_1`. Everything should work just fine.
 
 If you are facing any issue with this tutorial, please let me know in the comments below. Will surely help you in fixing that.
