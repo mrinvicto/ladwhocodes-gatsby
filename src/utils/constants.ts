@@ -54,4 +54,13 @@ export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {
     excerpt:
       "React Native is a cross platform mobile application development framework designed by Facebook.",
   },
+  "gatsby": {
+    title: "GatsbyJS",
+    description:
+      "Read latest articles about GatsbyJS. Learn how to make the most out of your GatsbyJS blog/application.",
+    keywords:
+      "GatsbyJS application development tutorials, performance optimizations in GatsbyJS, GatsbyJS performance optimizations, GatsbyJS fixes, GatsbyJS tutorials, Creating blog in GatsbyJS",
+    excerpt:
+      "GatsbyJS is used to make static websites. I am using it to run my blog.",
+  },
 }
