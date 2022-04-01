@@ -13,20 +13,6 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-        {
-          resolve: "gatsby-remark-external-links",
-          options: {
-            target: "_blank",
-            rel: "nofollow noopener noreferrer"
-          }
-        }
-        ]
-      }
-    },
     `gatsby-plugin-graphql-codegen`,
     {
       resolve: `gatsby-plugin-typescript`,
@@ -70,6 +56,13 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow noopener noreferrer"
+            }
+          }
         ],
       },
     },
