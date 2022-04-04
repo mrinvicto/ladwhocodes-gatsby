@@ -144,6 +144,12 @@ const createCategoryPages = (posts, createPage) => {
 **Step 5:** Now, lets create a category page template. This template will show all the posts belonging to that category as a simple list. Place this template in the location `./src/templates/category-page.js`
 
 ```javascript
+
+import * as React from "react"
+import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+
 const CategoryPageTemplate = ({
   data,
   location,
