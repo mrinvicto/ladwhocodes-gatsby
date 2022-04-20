@@ -15,9 +15,9 @@ Adding pagination to your Gatsby blog should be the first thing you should do af
 
 Moving to Gatsby can come as a shock for a lot of people. You literally have to do everything yourself, if you want to have a descently structured blog. But, again one of the best things about Gatsby is that you can do everything yourself :P.
 
-Additional read: [How to generate category pages in GatsbyJS](https://ladwhocodes.com/gatsby/generate-category-pages-gatsby-blog/1/)
+Additional read: [How to generate category pages in GatsbyJS](/gatsby/generate-category-pages-gatsby-blog/1/)
 
-When I moved to Gatsby I was thrilled by the speed, load time and over all performace. But, at the same time lack of features was a majot turn off. But, as I started building features I got a hang of it and things became pretty simple. I have published a few articles around features that I developed for my blog. You can easily find them here - [Gatsby](https://ladwhocodes.com/category/gatsby).
+When I moved to Gatsby I was thrilled by the speed, load time and over all performace. But, at the same time lack of features was a majot turn off. But, as I started building features I got a hang of it and things became pretty simple. I have published a few articles around features that I developed for my blog. You can easily find them here - [Gatsby](/category/gatsby).
 
 Now, lets get back to our original problem of adding pagination to your Gatsby blog. In order to achieve that all you have to do is follow the steps below and you are good to go.
 
