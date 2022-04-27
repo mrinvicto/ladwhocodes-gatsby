@@ -13,6 +13,22 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: "@slixites/gatsby-plugin-google-fonts",
+      options: {
+        fonts: [
+          `Quicksand\:400,700`,
+          `Fira+Code\:400`,
+          `Alegreya\:400,700,400i,700i`,
+        ],
+        display: "swap",
+        preconnect: true,
+        attributes: {
+          rel: "stylesheet preload prefetch",
+          as: "style",
+        },
+      },
+    },
     `gatsby-plugin-graphql-codegen`,
     {
       resolve: `gatsby-plugin-typescript`,

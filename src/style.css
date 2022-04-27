@@ -7,7 +7,7 @@
   --maxWidth-md: 28rem;
   --maxWidth-lg: 32rem;
   --maxWidth-xl: 36rem;
-  --maxWidth-2xl: 42rem;
+  --maxWidth-2xl: 48rem;
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
@@ -27,11 +27,13 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily-mono: "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+  --fontFamily-sans: Quicksand, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
+  --fontFamily-serif: "Alegreya", "Georgia", Cambria, "Times New Roman", Times,
+    serif;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
@@ -43,10 +45,10 @@
   --fontSize-root: 16px;
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
-  --lineHeight-normal: 1.5;
+  --lineHeight-normal: 1.4;
   --lineHeight-relaxed: 1.625;
   /* 1.200 Minor Third Type Scale */
-  --fontSize-0: 0.833rem;
+  --fontSize-0: 0.9rem;
   --fontSize-1: 1rem;
   --fontSize-2: 1.2rem;
   --fontSize-3: 1.44rem;
@@ -273,6 +275,7 @@ a:focus {
   color: var(--color-primary);
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
+  line-height: var(--lineHeight-normal);
 }
 
 .post-list-item header {
@@ -302,8 +305,16 @@ a:focus {
   border-radius: 100%;
 }
 
-.blog-post header h1 {
+.blog-post header,
+.blog-page header {
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
+}
+
+.blog-post header h1,
+.blog-page header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+  line-height: var(--lineHeight-normal) !important;
+  font-size: var(--fontSize-5);
 }
 
 .blog-post header p {
@@ -313,10 +324,47 @@ a:focus {
 
 .blog-post-nav ul {
   margin: var(--spacing-0);
+  font-size: var(--fontSize-2) !important;
+}
+
+.blog-post p,
+.blog-page p {
+  font-size: var(--fontSize-2);
+}
+
+.blog-post h4,
+.blog-page h4 {
+  font-size: var(--fontSize-2) !important;
+  line-height: var(--lineHeight-normal);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0) !important;
+}
+
+.blog-post ol,
+.blog-post ul,
+.blog-page ol,
+.blog-page ul {
+  font-size: var(--fontSize-2) !important;
+  line-height: var(--lineHeight-normal);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0) !important;
 }
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: var(--fontSize-0) !important;
+}
+
+code {
+  font-family: var(--fontFamily-mono) !important;
+}
+
+code.language-text {
+  font-size: var(--fontSize-1) !important;
+  padding: 0.1em 0.5em !important;
+  font-style: italic;
 }
 
 /* Media queries */
@@ -330,4 +378,41 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+}
+
+.post-category-link {
+  border-radius: 5px;
+  padding: var(--spacing-0) var(--spacing-2) !important;
+  text-transform: capitalize;
+}
+
+.post-meta-details {
+  margin-bottom: 5px;
+}
+
+a.post-category-link {
+  text-decoration: none;
+}
+
+a.post-category-link:hover {
+  text-decoration: underline;
+}
+
+/* CATEGORY LINKS */
+.post-category-link-react-native {
+  background: #96bdc6;
+}
+
+.post-category-link-java {
+  background: #b67192;
+  color: #790e40;
+}
+
+.post-category-link-gatsby {
+  background: #c6a1ec;
+  color: #8a27ec;
+}
+
+.post-category-link-flutter {
+  background: #84cae7;
 }

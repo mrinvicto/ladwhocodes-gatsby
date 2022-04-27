@@ -21,8 +21,13 @@ const ContactUsPage = ({ location }: PageProps<ContactUsPageQuery>) => (
             "Connect with Dinesh Verma, contact LadWhoCodes, LadwhoCodes contact Dinesh Verma, contact Dinesh Verma Dream11, contact Dinesh Verma Sliceit, email Dinesh Verma Github, email Dinesh Verma ZS Associates, email Dinesh Verma LadWhoCodes, email Dinesh Verma Slice",
         }}
       />
-      <h1>Contact Us</h1>
-      <p>We'd love to hear from you. We are still working on this page.</p>
+      <div className="blog-page">
+        <header>
+          <h1>Contact Us</h1>
+        </header>
+
+        <p>We'd love to hear from you. We are still working on this page.</p>
+      </div>
     </>
   </Layout>
 )

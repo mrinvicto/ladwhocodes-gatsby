@@ -34,20 +34,28 @@ const BlogPostTemplate = ({
       >
         <header>
           <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
-          <p>{post?.frontmatter?.date}</p>
+          <div className="post-meta">
+            <div className="post-meta-details">{post?.frontmatter?.date}</div>
+            <div className="post-categories">
+              <span>Posted in:</span>{" "}
+              {post?.frontmatter?.categories?.map(category => {
+                return (
+                  <Link
+                    className={`post-category-link post-category-link-${category}`}
+                    to={getCategoryPageRoute(category || "")}
+                  >
+                    {category}
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post?.html || "" }}
           itemProp="articleBody"
         />
         <hr />
-        <div>
-          {post?.frontmatter?.categories?.map(category => {
-            return (
-              <Link to={getCategoryPageRoute(category || "")}>{category}</Link>
-            )
-          })}
-        </div>
       </article>
       <nav className="blog-post-nav">
         <ul
