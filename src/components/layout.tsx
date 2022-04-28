@@ -28,9 +28,17 @@ const Layout = ({ location, children }: PageProps<any>) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <div className="footer-copyright">
+          © 2018 - {new Date().getFullYear()}, Built with
+          {` `}
+          <a
+            href="https://www.gatsbyjs.com"
+            target={"_blank"}
+            rel="nofollow noopener noreferrer"
+          >
+            Gatsby
+          </a>
+        </div>
       </footer>
     </div>
   )

@@ -54,7 +54,7 @@ export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {
     excerpt:
       "React Native is a cross platform mobile application development framework designed by Facebook.",
   },
-  "gatsby": {
+  gatsby: {
     title: "GatsbyJS",
     description:
       "Read latest articles about GatsbyJS. Learn how to make the most out of your GatsbyJS blog/application.",
@@ -62,5 +62,30 @@ export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {
       "GatsbyJS application development tutorials, performance optimizations in GatsbyJS, GatsbyJS performance optimizations, GatsbyJS fixes, GatsbyJS tutorials, Creating blog in GatsbyJS",
     excerpt:
       "GatsbyJS is used to make static websites. I am using it to run my blog.",
+  },
+  nodejs: {
+    title: "NodeJS",
+    description:
+      "Read latest articles about NodeJS. Learn NodeJS best practice and tips to avoid pitfalls.",
+    keywords:
+      "NodeJS application development tutorials, performance optimizations in NodeJS, NodeJS performance optimizations, NodeJS fixes, NodeJS tutorials, Creating apis in NodeJS",
+    excerpt:
+      "NodeJS is used to make static websites. I am using it to run my blog.",
+  },
+  "vs-code": {
+    title: "Visual Studio Code",
+    description:
+      "Read latest articles about Visual Studio Code. List of best plugin, theme and performance hacks for Visual Studio Code",
+    keywords:
+      "visual studio code themes, visual studio code hacks, visual studio code performace",
+    excerpt:
+      "NodeJS is used to make static websites. I am using it to run my blog.",
+  },
+  customizations: {
+    title: "Customizations",
+    description: "",
+    keywords: "",
+    excerpt:
+      "NodeJS is used to make static websites. I am using it to run my blog.",
   },
 }

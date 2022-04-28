@@ -41,7 +41,7 @@ const BlogPostTemplate = ({
               {post?.frontmatter?.categories?.map(category => {
                 return (
                   <Link
-                    className={`post-category-link post-category-link-${category}`}
+                    className={`post-category-link post-category-link-${category?.toLocaleLowerCase()}`}
                     to={getCategoryPageRoute(category || "")}
                   >
                     {category}

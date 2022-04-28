@@ -325,9 +325,21 @@ a:focus {
 .blog-post-nav ul {
   margin: var(--spacing-0);
   font-size: var(--fontSize-2) !important;
+  display: flex;
+}
+
+.blog-post-nav ul li {
+  flex: 1;
+  max-width: 45%;
+  text-align: right;
+}
+
+.blog-post-nav ul li:first-child {
+  text-align: left;
 }
 
 .blog-post p,
+.post-list-item p,
 .blog-page p {
   font-size: var(--fontSize-2);
 }
@@ -392,10 +404,15 @@ code.language-text {
 
 a.post-category-link {
   text-decoration: none;
+  margin-right: 5px;
 }
 
 a.post-category-link:hover {
   text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: var(--fontSize-2) !important;
 }
 
 /* CATEGORY LINKS */
@@ -415,4 +432,19 @@ a.post-category-link:hover {
 
 .post-category-link-flutter {
   background: #84cae7;
+}
+
+.post-category-link-customizations {
+  background: #cbe784;
+  color: #719b07;
+}
+
+.post-category-link-vs-code {
+  background: #f4b69c;
+  color: #c94912;
+}
+
+.post-category-link-nodejs {
+  background: #84e7d8;
+  color: #0da08a;
 }

@@ -1,0 +1,14 @@
+---
+title: How to check for memory leaks in NodeJS application
+date: "2022-04-27T12:35:38.581Z"
+categories: ["nodejs"]
+excerpt: In recent months I got a chance to work on a bug which gave me the opportunity to look into memory leaks in NodeJS application. And based on my experience I must say that memory leaks are pure pain in you know what. If you are looking for ways to debug memory leaks in your NodeJS code, follows my guide on checking memory leaks in NodeJS.
+permalink: "/gatsby/add-pagination/2/"
+# SEO
+meta_title: How to add pagination to a Gatsby blog
+meta_description: Learn how to add pagination to the homepage of your gatsby blog. GatsbyJS is highly customizable and hence you can write a few lines of code to create paginated blog posts.
+meta_keywords: "How to add pagination to gatsby blog post, how to generate paginated blog posts, how to add pagination in gatsby homepage"
+meta_image: "/images/og/og_2.png"
+---
+
+So, before we jump on to how I debugged my nodejs application for memory leaks; I wanna give a brief context around what the issue was.

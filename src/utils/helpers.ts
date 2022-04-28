@@ -115,7 +115,7 @@ export const getMetaLinks = (link: string): LinkProps[] => {
 }
 
 export const getCategoryPageRoute = (category: string) => {
-  return `/category/${category}`
+  return `/category/${category.toLowerCase()}`
 }
 
 export const getCompletePageURL = (pathName: string) => {
