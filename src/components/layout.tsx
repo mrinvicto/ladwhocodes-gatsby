@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { PageProps } from "../models/PageProps"
 import { BLOG_HOME_TITLE } from "../utils/constants"
+import { FooterSection } from "./footer"
 
 const Layout = ({ location, children }: PageProps<any>) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -24,22 +25,12 @@ const Layout = ({ location, children }: PageProps<any>) => {
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        <div className="footer-copyright">
-          © 2018 - {new Date().getFullYear()}, Built with
-          {` `}
-          <a
-            href="https://www.gatsbyjs.com"
-            target={"_blank"}
-            rel="nofollow noopener noreferrer"
-          >
-            Gatsby
-          </a>
-        </div>
-      </footer>
+    <div>
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
+        <header className="global-header">{header}</header>
+        <main>{children}</main>
+      </div>
+      <FooterSection />
     </div>
   )
 }
