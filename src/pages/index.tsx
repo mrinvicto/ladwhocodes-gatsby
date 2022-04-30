@@ -6,7 +6,6 @@ import {
   BLOG_DESCRIPTION,
   BLOG_KEYWORDS,
   HOMEPAGE_TITLE,
-  POSTS_PER_PAGE,
 } from "../utils/constants"
 import { PageProps } from "../models/PageProps"
 import { HomePageBlogPostsQuery } from "../../graphql-types"
