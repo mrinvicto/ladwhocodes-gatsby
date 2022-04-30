@@ -18,9 +18,11 @@ const Layout = ({ location, children }: PageProps<any>) => {
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
+      <h2 className="main-heading">
+        <Link className="header-link-home" to="/">
+          {title}
+        </Link>
+      </h2>
     )
   }
 

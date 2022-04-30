@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { AboutMePageQuery } from "../../graphql-types"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -25,7 +25,10 @@ const AboutUsPage = ({ location }: PageProps<AboutMePageQuery>) => (
         <header>
           <h1>About - Dinesh Verma</h1>
         </header>
-
+        <img
+          className={"about-profile-image"}
+          src="/images/pages/dinesh_verma.jpeg"
+        />
         <p>
           Bonjour! My name is Dinesh Verma and I am the lad behind ladwhocodes.
           LadWhoCodes is my personal blog where I write articles about coding,
@@ -42,14 +45,40 @@ const AboutUsPage = ({ location }: PageProps<AboutMePageQuery>) => (
           in-depth guide on technologies.
         </p>
         <p>
-          Currently, I am working as an SDE 3 at DreamX and prior to this, I was
-          working as a Senior Software Engineer at ZS Associates. For my
-          projects, I work with technologies like NodeJS, ReactJS, GraphQL,
-          Apollo, Flutter, Java, C#, MySQL, SQL Server, AWS, Dockers, and the
-          list goes on. I utilize my spare time in honing my skills and updating
-          myself with new information and technologies. Coming to my gadget, I
-          use my Macbook Pro 2019 as my one and only driver. Also, I use Oneplus
-          Nord for my mobile needs.
+          Currently, I am working as an SDE 3 at Slice. For my projects, I work
+          with technologies like NodeJS, ReactJS, GraphQL, Apollo,{" "}
+          <Link to="/category/flutter">Flutter</Link>, Java, C#, MySQL, SQL
+          Server, AWS, Dockers, and the list goes on. I utilize my spare time in
+          honing my skills and updating myself with new information and
+          technologies. Coming to my gadget, I use my Macbook Pro M1 Pro as my
+          primary driver. Also, I use Oneplus Nord for my mobile needs.
+        </p>
+        <p>
+          Feel free to connect with me on{" "}
+          <a
+            href="https://www.linkedin.com/in/mrinvicto"
+            rel="nofollow noopener noreferrer"
+            target={"_blank"}
+          >
+            LinkedIn
+          </a>
+          ,{" "}
+          <a
+            href="https://instagram.com/ladwhocodes"
+            rel="nofollow noopener noreferrer"
+            target={"_blank"}
+          >
+            Instagram
+          </a>{" "}
+          or{" "}
+          <a
+            href="https://twitter.com/dineshverma"
+            rel="nofollow noopener noreferrer"
+            target={"_blank"}
+          >
+            Twitter
+          </a>
+          .
         </p>
       </div>
     </>
