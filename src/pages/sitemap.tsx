@@ -1,22 +1,12 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import {
-  BLOG_DESCRIPTION,
-  BLOG_KEYWORDS,
-  HOMEPAGE_TITLE,
-  POSTS_PER_PAGE,
-} from "../utils/constants"
 import { PageProps } from "../models/PageProps"
-import { HomePageBlogPostsQuery } from "../../graphql-types"
+import { SitemapPageQuery } from "../../graphql-types"
+import { Link, graphql } from "gatsby"
 
-const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
+const SitemapPage = ({ data, location }: PageProps<SitemapPageQuery>) => {
   const posts = data?.allMarkdownRemark?.nodes || []
-
-  const getNoPostsSection = () => {
-    return <p>No blog posts found.</p>
-  }
 
   const getPostsListSection = () => {
     return (
@@ -58,44 +48,38 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
     )
   }
 
-  const getPostsSection = () => {
-    if (posts.length === 0) {
-      return getNoPostsSection()
-    } else {
-      return getPostsListSection()
-    }
-  }
-
   return (
     <Layout location={location}>
-      <Seo
-        location={location}
-        title={HOMEPAGE_TITLE}
-        meta={{
-          description: BLOG_DESCRIPTION,
-          title: HOMEPAGE_TITLE,
-          type: "website",
-          keywords: BLOG_KEYWORDS,
-        }}
-      />
-      {getPostsSection()}
+      <>
+        <Seo
+          title="Sitemap - A blog about coding and debugging"
+          location={location}
+          shouldAppendTitle={false}
+          meta={{
+            type: "website",
+            title: "Sitemap - A blog about coding and debugging",
+            description:
+              "Index of all tutorials and guides published on LadWhoCodes",
+            keywords:
+              "LadWhoCodes sitemap, LadWhoCodes all articles, LadWhoCodes most recent articles",
+          }}
+        />
+        {getPostsListSection()}
+      </>
     </Layout>
   )
 }
 
-export default BlogIndex
+export default SitemapPage
 
 export const pageQuery = graphql`
-  query HomePageBlogPosts {
+  query SitemapPage {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(
-      limit: 10
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {

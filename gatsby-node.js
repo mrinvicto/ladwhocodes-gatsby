@@ -1,6 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+// Change in index.tsx file as well.
 const MAX_POSTS_PER_PAGE_HOME = 10
 
 const createHomePagination = (posts, createPage) => {

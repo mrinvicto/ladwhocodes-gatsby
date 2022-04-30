@@ -12,6 +12,9 @@ export const FooterSection = () => {
           <div className="footer-link">
             <Link to={"/contact"}>Contact</Link>
           </div>
+          <div className="footer-link">
+            <Link to={"/sitemap"}>Sitemap</Link>
+          </div>
         </div>
         <div className="footer-copyright">
           © 2018 - {new Date().getFullYear()}, Built with
