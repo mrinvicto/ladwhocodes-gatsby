@@ -1,0 +1,14 @@
+---
+title: Top 10 Best Visual Studio Code Extensions
+date: "2022-05-17T12:35:38.581Z"
+categories: ["VS-code"]
+excerpt: Visual Studio Code is by far the best IDE I have used in my career as a software developer. One of the main reasons why I love using it so much, is because it has a huge set of extensions
+permalink: "/gatsby/add-pagination/2/"
+# SEO
+meta_title: How to add pagination to a Gatsby blog
+meta_description: Learn how to add pagination to the homepage of your gatsby blog. GatsbyJS is highly customizable and hence you can write a few lines of code to create paginated blog posts.
+meta_keywords: "How to add pagination to gatsby blog post, how to generate paginated blog posts, how to add pagination in gatsby homepage"
+meta_image: "/images/og/og_2.png"
+---
+
+So, before we jump on to how I debugged my nodejs application for memory leaks; I wanna give a brief context around what the issue was.
