@@ -14,6 +14,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-6999295635811899`,
+      },
+    },
+    {
       resolve: "@slixites/gatsby-plugin-google-fonts",
       options: {
         fonts: [
@@ -76,9 +82,9 @@ module.exports = {
             resolve: "gatsby-remark-external-links",
             options: {
               target: "_blank",
-              rel: "nofollow noopener noreferrer"
-            }
-          }
+              rel: "nofollow noopener noreferrer",
+            },
+          },
         ],
       },
     },
