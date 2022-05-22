@@ -5,6 +5,23 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { PageProps } from "../models/PageProps"
 import { getCategoryPageRoute } from "../utils/helpers"
+import InPostAd from "../components/postAd"
+
+const getAllArticleSections = (articleHTML: string, articleId: string) => {
+  const sections = articleHTML.split("<!--ADSENSE-->")
+  return sections.map((articleSectionHTML: string, id: number) => {
+    return (
+      <React.Fragment>
+        <section
+          dangerouslySetInnerHTML={{ __html: articleSectionHTML || "" }}
+          itemProp="articleBody"
+          key={`ARTICLE_SECTION_${id}_${articleId}`}
+        />
+        <InPostAd />
+      </React.Fragment>
+    )
+  })
+}
 
 const BlogPostTemplate = ({
   data,
@@ -51,10 +68,11 @@ const BlogPostTemplate = ({
             </div>
           </div>
         </header>
-        <section
+        {getAllArticleSections(post?.html || "", post?.id || "")}
+        {/* <section
           dangerouslySetInnerHTML={{ __html: post?.html || "" }}
           itemProp="articleBody"
-        />
+        /> */}
         <hr />
       </article>
       <nav className="blog-post-nav">

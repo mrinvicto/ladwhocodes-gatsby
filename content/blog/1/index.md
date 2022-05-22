@@ -15,9 +15,12 @@ I recently moved my blog from Wordpress to Gatsby and the every first thing that
 
 By adding category to your blog post and creating category pages on your gatsby blog, you give your readers a place to see all articles belonging to that category. This allows you to quickly create article series and publish the list quickly. Also, when used properly these category pages can really help with SEO.
 
+<!--ADSENSE-->
+
 So, without further ado lets quickly jump into the details of how to add categories and generate category pages in gatsby.
 
 **Step 1:** In all your blog articles' markdown files, add the category in the frontmatter section.
+
 ```javascript
 ---
 title: Your article title
@@ -29,7 +32,7 @@ categories: ["category_name_1", "category_name_2"]
 **Step 2:** Update the graphql query in the `createPages` function in `gatsby-node.js` file. By doing so you will get access to all the categories of all the blog posts. You can then, use this categories list to generate category pages.
 
 ```javascript
-`
+;`
   {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: ASC }
@@ -144,24 +147,16 @@ const createCategoryPages = (posts, createPage) => {
 **Step 5:** Now, lets create a category page template. This template will show all the posts belonging to that category as a simple list. Place this template in the location `./src/templates/category-page.js`
 
 ```javascript
-
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const CategoryPageTemplate = ({
-  data,
-  location,
-  pageContext,
-}) => {
+const CategoryPageTemplate = ({ data, location, pageContext }) => {
   const posts = data?.allMarkdownRemark.nodes || []
   return (
     <Layout location={location}>
-      <Seo
-        location={location}
-        title={pageContext?.category}
-      />
+      <Seo location={location} title={pageContext?.category} />
       <h1>{pageContext?.category}</h1>
       <ol style={{ listStyle: `none` }}>
         {posts?.map(post => {
@@ -176,10 +171,7 @@ const CategoryPageTemplate = ({
               >
                 <header>
                   <h2>
-                    <Link
-                      to={post?.fields?.slug || ""}
-                      itemProp="url"
-                    >
+                    <Link to={post?.fields?.slug || ""} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
