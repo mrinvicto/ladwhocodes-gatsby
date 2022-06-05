@@ -484,6 +484,11 @@ a.post-category-link:hover {
   color: #0da08a;
 }
 
+.post-category-link-adsense {
+  background: #d28686;
+  color: #c62d2d;
+}
+
 .post-ad-container {
   margin-bottom: var(--spacing-8);
 }
