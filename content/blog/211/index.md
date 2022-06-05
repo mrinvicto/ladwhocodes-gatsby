@@ -23,6 +23,8 @@ Since this is a known issue, the react native team has fixed this issue. So, if 
 
 Note: While upgrading the version of react-native, we ran into multiple issues. So, we dropped the plan. Cheers !!
 
+<!--ADSENSE-->
+
 #### Solution 2 – Manual Fixes
 
 As solution 1 didn’t work out for us we tried providing a patch fix for this solution. This solution will help in loading images in your react native applications on iOS 14 devices.

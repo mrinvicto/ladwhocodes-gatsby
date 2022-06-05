@@ -15,6 +15,8 @@ I love visual studio code because its easy to use, powerful and has tons of plug
 
 If you go to Visual Studio Code Marketplace, you will see thousands of Visual Studio code themes. Some of these themes have millions of users. But, every developer is unique and has different taste and hence their preference of visual studio code theme can differ.
 
+<!--ADSENSE-->
+
 In today's article, I am sharing some of the best visual studio code themes developers which have been handpicked by me, so I hope you all like it.
 
 ### Night Owl
@@ -28,6 +30,8 @@ One Dark Pro is the most popular VS Code theme available out there. It has been 
 ### Github Theme
 
 Github theme for VS Code is my personal favorite. I am currently using this theme only. This theme has been downloaded over 800K times and has a rating of 4.5/5 [Link](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
+
+<!--ADSENSE-->
 
 ### Shades Of Purple
 

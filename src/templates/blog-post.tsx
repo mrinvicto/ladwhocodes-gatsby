@@ -9,15 +9,15 @@ import InPostAd from "../components/postAd"
 
 const getAllArticleSections = (articleHTML: string, articleId: string) => {
   const sections = articleHTML.split("<!--ADSENSE-->")
-  return sections.map((articleSectionHTML: string, id: number) => {
+  return sections.map((articleSectionHTML: string, idx: number) => {
     return (
       <React.Fragment>
         <section
           dangerouslySetInnerHTML={{ __html: articleSectionHTML || "" }}
           itemProp="articleBody"
-          key={`ARTICLE_SECTION_${id}_${articleId}`}
+          key={`ARTICLE_SECTION_${idx}_${articleId}`}
         />
-        <InPostAd />
+        {idx !== sections.length - 1 && <InPostAd />}
       </React.Fragment>
     )
   })

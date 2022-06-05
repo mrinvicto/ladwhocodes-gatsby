@@ -15,6 +15,8 @@ When you are working with a big team where everyone has their own code formattin
 
 Without having consistent code fomatting across codebase, your team can run into one major issue - Increased modified lines of code in PRs as others' code is getting formatted as per your formatting preference. This make reviewing PRs very difficult and bugs might slip through as reviewer got overwhelmed by seeing so many lines of changes and skipped to review the new changes made.
 
+<!--ADSENSE-->
+
 Today, let try to solve this problem by implementing auto code formatting using **Google Java Format** and git pre commit hooks. Before we move forward, if you are unaware of what Git Pre-Commit Hooks are, spend sometime reading about them here: Git Pre-Commit Hooks De-Mystified.
 
 To simplify our lives we will be using a maven plugin called [Git Code Format Maven Plugin](https://github.com/Cosium/git-code-format-maven-plugin) by Cosium which provided both Google Java Format & Git Hooks in-built. All you have to is add the plugin to your pom.xml file and you are done.
@@ -50,5 +52,7 @@ To simplify our lives we will be using a maven plugin called [Git Code Format Ma
 ```
 
 Once, you have added this plugin. Go to the Maven menu and run the `git-code-format:install-hooks` hook which will install the git pre-commit hook.
+
+<!--ADSENSE-->
 
 And this is all you had to do. Now, make some formatting changes to your code and commit it. Its will get formatted before its committed and you will have a clean codebase.

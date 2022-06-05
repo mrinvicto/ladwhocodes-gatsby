@@ -17,6 +17,8 @@ Moving to Gatsby can come as a shock for a lot of people. You literally have to 
 
 Additional read: [How to generate category pages in GatsbyJS](/gatsby/generate-category-pages-gatsby-blog/1/)
 
+<!--ADSENSE-->
+
 When I moved to Gatsby I was thrilled by the speed, load time and over all performace. But, at the same time lack of features was a majot turn off. But, as I started building features I got a hang of it and things became pretty simple. I have published a few articles around features that I developed for my blog. You can easily find them here - [Gatsby](/category/gatsby).
 
 Now, lets get back to our original problem of adding pagination to your Gatsby blog. In order to achieve that all you have to do is follow the steps below and you are good to go.
@@ -31,11 +33,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { BlogPostsByPageNumberQuery } from "../../graphql-types"
 
-const RecentArticleListTemplate = ({
-  data,
-  location,
-  pageContext,
-}) => {
+const RecentArticleListTemplate = ({ data, location, pageContext }) => {
   const posts = data?.allMarkdownRemark.edges || []
   const { currentPage, numberOfPages } = pageContext || {}
   const isFirst = currentPage === 1
@@ -122,6 +120,8 @@ export const pageQuery = graphql`
   }
 `
 ```
+
+<!--ADSENSE-->
 
 Step 2: Now, update the file `gatsby-node.js` by adding the function `createHomePagination` to it. This function will accept all the posts from your blog and split them across pages. Also, make a call to the function `createHomePagination` immediately after `createPage` function call, passing all the posts to it.
 
