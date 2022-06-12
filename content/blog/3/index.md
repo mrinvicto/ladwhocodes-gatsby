@@ -31,6 +31,8 @@ setInterval(() => {
 }, 500)
 ```
 
+<!--ADSENSE-->
+
 In the code above, we have a function named `processNumber` which gets called every 500ms with a random size array as input. In this function we are doing some processing with this array and also storing it in a global array (weird logic).
 
 Since, this random size array is stored in a global array hence it wont get garbage collected. Now, as the number of requests to this function grow, the number of entries in this global array will also grow. This is what memory leak looks like.
@@ -56,5 +58,7 @@ As we already have this code example, lets try to debug and find out memory leak
 ![Memory Leak Nodejs](/images/memory-leak-devtools.png)
 
 9. Now, you will have to manually go though these new memory allocations to find out which piece of code is causing memory leak. You can look though the stack trace of memory allocation and see which code is finally resulting in memory leaks.
+
+<!--ADSENSE-->
 
 So, this was all in this article. If you follow the steps properly you can easily find out which code is causing memory leak in NodeJS code.
