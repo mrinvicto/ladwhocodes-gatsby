@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 import { PageProps } from "../models/PageProps"
 import { getCategoryPageRoute } from "../utils/helpers"
 import InPostAd from "../components/postAd"
+import { PostComment } from "../components/postComment"
 
 const getAllArticleSections = (articleHTML: string, articleId: string) => {
   const sections = articleHTML.split("<!--ADSENSE-->")
@@ -101,6 +102,7 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
+      <PostComment />
     </Layout>
   )
 }
