@@ -38,7 +38,13 @@ const Seo = (props: PageSEOInfo) => {
         getCompletePageURL(location?.pathname || "")
       )}
       link={getMetaLinks(getCompletePageURL(location?.pathname || ""))}
-    />
+    >
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6999295635811899"
+        crossorigin="anonymous"
+      ></script>
+    </Helmet>
   )
 }
 

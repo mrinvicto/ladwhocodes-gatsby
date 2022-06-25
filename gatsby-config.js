@@ -14,18 +14,13 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: `ca-pub-6999295635811899`,
-      },
-    },
-    {
       resolve: "@slixites/gatsby-plugin-google-fonts",
       options: {
         fonts: [
           `Quicksand\:400,700`,
           `Fira+Code\:400`,
           `Alegreya\:400,700,400i,700i`,
+          `Playfair+Display\:700`,
         ],
         display: "swap",
         preconnect: true,
