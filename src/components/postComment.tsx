@@ -1,9 +1,9 @@
-import React from "react"
+import React, { RefObject } from "react"
 
 export class PostComment extends React.Component {
-  // static contextType = ThemeContext
+  private commentBox: RefObject<any>
 
-  constructor(props) {
+  constructor(props: any) {
     super(props)
     this.commentBox = React.createRef() // Creates a reference to inject the <script> element
   }
@@ -13,7 +13,7 @@ export class PostComment extends React.Component {
     let scriptEl = document.createElement("script")
     scriptEl.setAttribute("src", "https://utteranc.es/client.js")
     scriptEl.setAttribute("crossorigin", "anonymous")
-    scriptEl.setAttribute("async", true)
+    scriptEl.setAttribute("async", "true")
     scriptEl.setAttribute("repo", "mrinvicto/ladwhocodes-comments")
     scriptEl.setAttribute("issue-term", "pathname")
     scriptEl.setAttribute("theme", utteranceTheme)

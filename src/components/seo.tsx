@@ -42,7 +42,7 @@ const Seo = (props: PageSEOInfo) => {
       <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6999295635811899"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
     </Helmet>
   )
