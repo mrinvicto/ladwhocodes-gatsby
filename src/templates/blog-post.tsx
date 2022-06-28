@@ -4,7 +4,7 @@ import { BlogPostBySlugQuery } from "../../graphql-types"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { PageProps } from "../models/PageProps"
-import { getCategoryPageRoute } from "../utils/helpers"
+import { getCategoryPageRoute, getFeaturedImageURL } from "../utils/helpers"
 import InPostAd from "../components/postAd"
 import { PostComment } from "../components/postComment"
 
@@ -50,6 +50,13 @@ const BlogPostTemplate = ({
         itemScope
         itemType="http://schema.org/Article"
       >
+        <img
+          className="post-featured-image"
+          src={getFeaturedImageURL(
+            post?.frontmatter?.post_id || 0,
+            post?.frontmatter?.featured_image || ""
+          )}
+        />
         <header>
           <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
           <div className="post-meta">
@@ -133,6 +140,8 @@ export const pageQuery = graphql`
         meta_description
         meta_keywords
         meta_image
+        featured_image
+        post_id
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

@@ -4,6 +4,7 @@ date: "2020-05-23T22:12:03.284Z"
 categories: ["flutter"]
 excerpt: Flutter is a mobile development SDK developed by Google. The best part of using Flutter is that you can create cross-platform applications which perform as good as native apps.
 permalink: "/flutter/flutter-sdk-not-found-in-the-specified-location/26/"
+featured_image: "http://nordthemes.com/the-universe/wp-content/uploads/sites/10/2017/04/sam-williams-4wnrpZtUmqU-unsplash-1300x820.jpg"
 # SEO
 meta_title: Flutter SDK not found in the specified location Error
 meta_description: Flutter SDK not found is a commong error that majority first timer flutter developers encounter. Follow the steps to fix flutter SDK not found error.

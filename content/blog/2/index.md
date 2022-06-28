@@ -4,6 +4,7 @@ date: "2022-04-20T12:35:38.581Z"
 categories: ["gatsby"]
 excerpt: If you are a new GatsbyJS user, then one of the first things that you must have observed is no option for pagination on homepage. But, the best things about Gatsby is that you can create anything you want. So, follow this tutorial to learn how to add pagination to your Gatsby blog.
 permalink: "/gatsby/add-pagination/2/"
+featured_image: "http://nordthemes.com/the-universe/wp-content/uploads/sites/10/2017/04/sam-williams-4wnrpZtUmqU-unsplash-1300x820.jpg"
 # SEO
 meta_title: How to add pagination to a Gatsby blog
 meta_description: Learn how to add pagination to the homepage of your gatsby blog. GatsbyJS is highly customizable and hence you can write a few lines of code to create paginated blog posts.

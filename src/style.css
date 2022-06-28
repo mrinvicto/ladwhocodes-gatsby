@@ -511,3 +511,18 @@ a.post-category-link:hover {
 .post-ad-container {
   margin-bottom: var(--spacing-8);
 }
+
+.post-featured-image {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  max-width: none !important;
+}
+
+.post-list-featured-image {
+  max-width: 100%;
+  margin-bottom: var(--spacing-4);
+}

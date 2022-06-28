@@ -1,3 +1,6 @@
+# Custom folders
+/static/images/featured
+
 # Logs
 logs
 *.log

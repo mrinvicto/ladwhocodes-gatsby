@@ -4,6 +4,7 @@ date: "2022-04-27T12:35:38.581Z"
 categories: ["customizations", "VS-code"]
 excerpt: I love visual studio code because its easy to use, powerful and has tons of plugins/extensions. Today, I am sharing with you all some of the best visual studio code themes for developers. These visual studio code themes have been handpicked by me, so I hope you all like it.
 permalink: "/customizations/best-visual-studio-code-themes-for-developers/223/"
+featured_image: "http://nordthemes.com/the-universe/wp-content/uploads/sites/10/2017/04/sam-williams-4wnrpZtUmqU-unsplash-1300x820.jpg"
 # SEO
 meta_title: Best Visual Studio Code Themes for Developers
 meta_description: Here is a well curated list of some of the best Visual Studio code themes for developers. Each developer is unique and so can be their visual studio code theme preference.

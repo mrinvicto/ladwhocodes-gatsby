@@ -121,3 +121,7 @@ export const getCategoryPageRoute = (category: string) => {
 export const getCompletePageURL = (pathName: string) => {
   return `${SITE_URL}${pathName}`
 }
+
+export const getFeaturedImageURL = (postId: number, image: string) => {
+  return `/images/featured/${postId}_${image}`
+}

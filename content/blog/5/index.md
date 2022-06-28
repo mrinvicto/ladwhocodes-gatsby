@@ -4,6 +4,7 @@ date: "2022-06-05T03:50:27.476Z"
 categories: ["adsense", "gatsby"]
 excerpt: Over the years of running Adsense ads I have realized one thing - you can generate maximum revenue by displaying adsense ads within posts. So, today we will be looking into how can we display Adsense ads inside posts on gatsbyjs blog.
 permalink: "/gatsby/adsense-ads-inside-posts/5/"
+featured_image: "http://nordthemes.com/the-universe/wp-content/uploads/sites/10/2017/04/sam-williams-4wnrpZtUmqU-unsplash-1300x820.jpg"
 # SEO
 meta_title: Display Adsense Ads Inside Posts On GatsbyJs Blog
 meta_description: To generate maximum revenue from your gatsby blog, start displaying ads inside blog posts.

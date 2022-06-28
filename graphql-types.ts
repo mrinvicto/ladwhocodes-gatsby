@@ -689,10 +689,12 @@ export type Frontmatter = {
   categories?: Maybe<Array<Maybe<Scalars['String']>>>;
   excerpt?: Maybe<Scalars['String']>;
   permalink?: Maybe<Scalars['String']>;
+  featured_image?: Maybe<Scalars['String']>;
   meta_title?: Maybe<Scalars['String']>;
   meta_description?: Maybe<Scalars['String']>;
   meta_keywords?: Maybe<Scalars['String']>;
   meta_image?: Maybe<Scalars['String']>;
+  post_id?: Maybe<Scalars['Int']>;
 };
 
 
@@ -1062,10 +1064,12 @@ export type FrontmatterFilterInput = {
   categories?: InputMaybe<StringQueryOperatorInput>;
   excerpt?: InputMaybe<StringQueryOperatorInput>;
   permalink?: InputMaybe<StringQueryOperatorInput>;
+  featured_image?: InputMaybe<StringQueryOperatorInput>;
   meta_title?: InputMaybe<StringQueryOperatorInput>;
   meta_description?: InputMaybe<StringQueryOperatorInput>;
   meta_keywords?: InputMaybe<StringQueryOperatorInput>;
   meta_image?: InputMaybe<StringQueryOperatorInput>;
+  post_id?: InputMaybe<IntQueryOperatorInput>;
 };
 
 export type FieldsFilterInput = {
@@ -1283,10 +1287,12 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___categories'
   | 'childrenMarkdownRemark___frontmatter___excerpt'
   | 'childrenMarkdownRemark___frontmatter___permalink'
+  | 'childrenMarkdownRemark___frontmatter___featured_image'
   | 'childrenMarkdownRemark___frontmatter___meta_title'
   | 'childrenMarkdownRemark___frontmatter___meta_description'
   | 'childrenMarkdownRemark___frontmatter___meta_keywords'
   | 'childrenMarkdownRemark___frontmatter___meta_image'
+  | 'childrenMarkdownRemark___frontmatter___post_id'
   | 'childrenMarkdownRemark___fields___slug'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
@@ -1347,10 +1353,12 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___categories'
   | 'childMarkdownRemark___frontmatter___excerpt'
   | 'childMarkdownRemark___frontmatter___permalink'
+  | 'childMarkdownRemark___frontmatter___featured_image'
   | 'childMarkdownRemark___frontmatter___meta_title'
   | 'childMarkdownRemark___frontmatter___meta_description'
   | 'childMarkdownRemark___frontmatter___meta_keywords'
   | 'childMarkdownRemark___frontmatter___meta_image'
+  | 'childMarkdownRemark___frontmatter___post_id'
   | 'childMarkdownRemark___fields___slug'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
@@ -3090,10 +3098,12 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___categories'
   | 'frontmatter___excerpt'
   | 'frontmatter___permalink'
+  | 'frontmatter___featured_image'
   | 'frontmatter___meta_title'
   | 'frontmatter___meta_description'
   | 'frontmatter___meta_keywords'
   | 'frontmatter___meta_image'
+  | 'frontmatter___post_id'
   | 'fields___slug'
   | 'excerpt'
   | 'rawMarkdownBody'
@@ -3471,7 +3481,7 @@ export type ContactUsPageQuery = { site?: { buildTime?: any | null } | null };
 export type HomePageBlogPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type HomePageBlogPostsQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null } | null }> } };
+export type HomePageBlogPostsQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, allMarkdownRemark: { nodes: Array<{ excerpt?: string | null, fields?: { slug?: string | null } | null, frontmatter?: { date?: any | null, title?: string | null, excerpt?: string | null, permalink?: string | null, featured_image?: string | null, post_id?: number | null } | null }> } };
 
 export type SitemapPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3485,7 +3495,7 @@ export type BlogPostBySlugQueryVariables = Exact<{
 }>;
 
 
-export type BlogPostBySlugQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, markdownRemark?: { id: string, excerpt?: string | null, html?: string | null, frontmatter?: { title?: string | null, date?: any | null, description?: string | null, categories?: Array<string | null> | null, meta_title?: string | null, meta_description?: string | null, meta_keywords?: string | null, meta_image?: string | null } | null } | null, previous?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, permalink?: string | null } | null } | null, next?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, permalink?: string | null } | null } | null };
+export type BlogPostBySlugQuery = { site?: { siteMetadata?: { title?: string | null } | null } | null, markdownRemark?: { id: string, excerpt?: string | null, html?: string | null, frontmatter?: { title?: string | null, date?: any | null, description?: string | null, categories?: Array<string | null> | null, meta_title?: string | null, meta_description?: string | null, meta_keywords?: string | null, meta_image?: string | null, featured_image?: string | null, post_id?: number | null } | null } | null, previous?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, permalink?: string | null } | null } | null, next?: { fields?: { slug?: string | null } | null, frontmatter?: { title?: string | null, permalink?: string | null } | null } | null };
 
 export type CategoryPageByTypeQueryVariables = Exact<{
   category: Scalars['String'];

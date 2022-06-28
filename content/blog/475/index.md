@@ -4,6 +4,7 @@ date: "2022-01-06T22:12:03.284Z"
 categories: ["java"]
 excerpt: When you are working with a big team where everyone has their own code formatting preferences, it becomes very difficult to have consistent formatting across your codebase. This is very common with Java projects as there are tons of options for IDEs too. So, let's get our hands dirty and try to implement provision for auto code format for Java using prettier and git hooks.
 permalink: "/java/prettier-integration-with-java/475/"
+featured_image: "http://nordthemes.com/the-universe/wp-content/uploads/sites/10/2017/04/sam-williams-4wnrpZtUmqU-unsplash-1300x820.jpg"
 # SEO
 meta_title: How to use prettier to format your Java codebase
 meta_description: Prettier is a code formatter that can be used to format your code. Learn to integrate it to your Java codebase via hooks and format your code everytime before pushing it to github.

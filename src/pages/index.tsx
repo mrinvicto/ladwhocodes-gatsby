@@ -9,6 +9,7 @@ import {
 } from "../utils/constants"
 import { PageProps } from "../models/PageProps"
 import { HomePageBlogPostsQuery } from "../../graphql-types"
+import { getFeaturedImageURL } from "../utils/helpers"
 
 const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
   const posts = data?.allMarkdownRemark?.nodes || []
@@ -30,6 +31,13 @@ const BlogIndex = ({ data, location }: PageProps<HomePageBlogPostsQuery>) => {
                 itemScope
                 itemType="http://schema.org/Article"
               >
+                <img
+                  className="post-list-featured-image"
+                  src={getFeaturedImageURL(
+                    post?.frontmatter?.post_id || 0,
+                    post?.frontmatter?.featured_image || ""
+                  )}
+                />
                 <header>
                   <h2>
                     <Link
@@ -105,6 +113,8 @@ export const pageQuery = graphql`
           title
           excerpt
           permalink
+          featured_image
+          post_id
         }
       }
     }

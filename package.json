@@ -56,13 +56,14 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "build": "tsc && gatsby build",
+    "build": "tsc && yarn copy-images && gatsby build",
     "develop": "yarn clean && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "compile": "tsc"
+    "compile": "tsc",
+    "copy-images": "ts-node customScripts/copyImages.ts"
   }
 }

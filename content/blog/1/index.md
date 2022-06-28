@@ -4,6 +4,7 @@ date: "2022-03-27T03:53:36.931Z"
 categories: ["gatsby"]
 excerpt: If you are using Gatsby for your blog, then you must be missing out the functionality to specify categories for your blog posts and the category pages. These category pages not only allow your readers to quickly see all articles belonging to a category, but can also play a pivotal role in gaining SEO benefits.
 permalink: "/gatsby/generate-category-pages-gatsby-blog/1/"
+featured_image: "https://theunheards.com/images/dad_and_daughter.jpeg"
 # SEO
 meta_title: How to generate category pages in Gatsby blog
 meta_description: Learn how to add categories to your blog posts and generate category pages in your gatsby blog. These category pages can help your readers and can help you with SEO.
