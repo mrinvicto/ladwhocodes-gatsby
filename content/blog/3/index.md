@@ -1,11 +1,11 @@
 ---
-title: How to check memory leak in NodeJS application
+title: How to find memory leak in NodeJS application
 date: "2022-06-11T07:09:24.858Z"
 categories: ["nodejs"]
 excerpt: In the recent months I got a chance to work on a bug which gave me the opportunity to look into memory leaks in NodeJS application. Memory leaks can be very difficult to identify and the process can be tricky. This guide is written to simplify the process for anyone trying to find out memory leaks in Nodejs.
 permalink: "/nodejs/find-memory-leak/3/"
 # SEO
-meta_title: How to check memory leak in NodeJS application
+meta_title: How to find memory leak in NodeJS application
 meta_description: Memory leaks in NodeJS can occur if code is not written properly. If your application has a memory leaks, the follow the steps to find out memory leaks in NodeJS code.
 meta_keywords: "Memory leak in Nodejs, Find Memory Leaks in Nodejs Code, Memory Leaks in Nodejs Code, How to find out memory leak in Nodejs code"
 meta_image: "/images/og/og_3.png"

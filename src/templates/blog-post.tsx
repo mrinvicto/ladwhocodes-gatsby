@@ -53,9 +53,14 @@ const BlogPostTemplate = ({
         <header>
           <h1 itemProp="headline">{post?.frontmatter?.title}</h1>
           <div className="post-meta">
-            <div className="post-meta-details">{post?.frontmatter?.date}</div>
+            <div className="post-meta-details">
+              Published On: <span>{post?.frontmatter?.date}</span> by{" "}
+              <span>
+                <Link to={"/about"}>Dinesh Verma</Link>
+              </span>
+            </div>
             <div className="post-categories">
-              <span>Posted in:</span>{" "}
+              <span>Tags:</span>{" "}
               {post?.frontmatter?.categories?.map(category => {
                 return (
                   <Link
