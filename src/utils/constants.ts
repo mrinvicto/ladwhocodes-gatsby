@@ -1,7 +1,7 @@
 import { CatgeoryPageDetails } from "../models/CatgeoryPageDetails"
 
 // Default site properties
-export const SITE_URL = "https://ladwhocodes.com"
+export const SITE_URL = "https://www.ladwhocodes.com"
 export const BLOG_HOME_TITLE = "LadWhoCodes"
 export const BLOG_TITLE_SUFFIX = "LadWhoCodes"
 export const BLOG_DESCRIPTION =
@@ -23,7 +23,7 @@ export const SITE_TWITTER_HANDLE = "@dineshverma"
 // Default OG Tag values
 export const DEFAULT_OG_SHARE_IMAGE =
   "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjD7n83jJkBG2P-P6QaDVJ3wOVeHkDKYjet4J2ZL-3hzROrFCOb5jmUFK13n9NYu0ItRn5khcESYzVg_nhTdaE1j6oXQ4wKXYJUpC8cWnZT9dtC2D9KxocjFXK6WcSwOLIpF_ScxpkbHjIbh-gfBkbMhnKQzaonwhUrP6SzofVBlifDF1bt9dgE3beAEQ/s1600/og-default.png"
-export const OG_ABOUT_ME_PAGE = "https://ladwhocodes.com/about"
+export const OG_ABOUT_ME_PAGE = "https://www.ladwhocodes.com/about"
 
 // Category page values
 export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {

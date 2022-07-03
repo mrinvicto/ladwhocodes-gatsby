@@ -1,4 +1,4 @@
-const SITE_URL = "https://ladwhocodes.com/"
+const SITE_URL = "https://www.ladwhocodes.com/"
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
