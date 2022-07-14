@@ -95,4 +95,11 @@ export const CATEGORY_DETAILS: { [key: string]: CatgeoryPageDetails } = {
     excerpt:
       "NodeJS is used to make static websites. I am using it to run my blog.",
   },
+  mac: {
+    title: "Mac",
+    description: "",
+    keywords: "",
+    excerpt:
+      "NodeJS is used to make static websites. I am using it to run my blog.",
+  },
 }
