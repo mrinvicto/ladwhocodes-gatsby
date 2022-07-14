@@ -15,6 +15,8 @@ I am using my Macbook pro with two Samsung 32 inch 4k monitors. I must say that 
 
 I tried looking out for it solution and found out that this issue is quite common. A lot of people are facing this issue and all these macbook forums are filled with questions looking for a solution of this problem.
 
+<!--ADSENSE-->
+
 After a bit of google search, I found a perfectly working solution for this problem. If you too want to fix this issue of mac randomly changing the display arrangement, then follow the steps below.
 
 1. Install homebrew on your system. https://brew.sh/
